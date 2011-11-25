@@ -1,12 +1,9 @@
 ======================================
-
 You are browsing the Github home of The jQuery Handpicked Plugins Repo!
 
-'Supercharge your website'
+Browse live demos of the plugins here: http://iwantaneff.in/repo/
 
-Browse live demos of the projects here: http://iwantaneff.in/repo/
-
-For a folder directory + file browser with zipped up individual scripts, visit:
+You can use Github to download individual scripts as .ZIP files, or use an alternative file dump browser here:
 
 http://iwantaneff.in/repo/browser/
 
