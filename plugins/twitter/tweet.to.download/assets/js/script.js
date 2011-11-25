@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#tweetLink").tweetAction({text:"How to make a simple Tweet to Download system",url:"http://tutorialzine.com/2011/05/tweet-to-download-jquery/",via:"tutorialzine",related:"tutorialzine"},function(){$("a.downloadButton").addClass("active").attr("href","http://demo.tutorialzine.com/2011/05/tweet-to-download-jquery/tweet_to_download.zip")})});

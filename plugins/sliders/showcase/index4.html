@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Awkward Showcase - Demo #4</title>
+<link rel="stylesheet" href="css/style.css" />
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.aw-showcase.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function()
+{
+	$("#showcase").awShowcase(
+	{
+		content_width:			700,
+		content_height:			470,
+		hundred_percent:		false,
+		auto:					false,
+		interval:				3000,
+		continuous:				false,
+		loading:				true,
+		tooltip_width:			200,
+		tooltip_icon_width:		32,
+		tooltip_icon_height:	32,
+		tooltip_offsetx:		18,
+		tooltip_offsety:		0,
+		arrows:					true,
+		buttons:				true,
+		btn_numbers:			false,
+		keybord_keys:			true,
+		mousetrace:				false,
+		pauseonover:			true,
+		transition:				'fade', /* hslide/vslide/fade */
+		transition_speed:		500,
+		transition_delay:		300,
+		show_caption:			'onhover', /* onload/onhover/show */
+		thumbnails:				true,
+		thumbnails_position:	'outside-last', /* outside-last/outside-first/inside-last/inside-first */
+		thumbnails_direction:	'horizontal', /* vertical/horizontal */
+		thumbnails_slidex:		0, /* 0 = auto / 1 = slide one thumbnail / 2 = slide two thumbnails / etc. */
+		dynamic_height:			true,
+		speed_change:			false,
+		viewline:				false
+	});
+});
+
+</script>
+</head>
+<body>
+
+<div class="menu"><a href="index.html">Demo #1</a> (Normal) | <a href="index2.html">Demo #2</a> (Vertical thumnbails) | <a href="index3.html">Demo #3</a> (Horizontal thumbnails) | <a href="index4.html" class="active">Demo #4</a> (Dynamic height) | <a href="index5.html">Demo #5</a> (Hundred percent) | <a href="index6.html">Demo #6</a> (Viewline)</div>
+<div id="error"></div>
+<div style="width: 700px; margin: auto;">
+
+	<!-- This is the button used to switch between One Page and Slideshow. -->
+	<p><a id="awOnePageButton" href="#"><span class="view-page">View As One Page</span><span class="view-slide">View As Slideshow</span></a></p>
+	
+	<div id="showcase" class="showcase">
+		<!-- Each child div in #showcase represents a slide -->
+		<div class="showcase-slide">
+			<div class="showcase-content">
+				<img src="images/05.jpg" alt="05" />
+			</div>
+			<div class="showcase-thumbnail">
+				<img src="images/05.jpg" alt="05" width="140px" />
+				<!-- The div below with the class .showcase-thumbnail-cover is used for the thumbnails active state. -->
+				<div class="showcase-thumbnail-cover"></div>
+			</div>
+		</div>
+		<!-- Each child div in #showcase represents a slide -->
+		<div class="showcase-slide">
+			<!-- Put the slide content in a div with the class .showcase-content. -->
+			<div class="showcase-content">
+				<img src="images/01.jpg" alt="01" />
+			</div>
+			<!-- Put the thumbnail content in a div with the class .showcase-thumbnail -->
+			<div class="showcase-thumbnail">
+				<img src="images/01.jpg" alt="01" width="140px" />
+				<div class="showcase-thumbnail-cover"></div>
+			</div>
+			<!-- Put the caption content in a div with the class .showcase-caption -->
+			<div class="showcase-caption">
+				<h2>Be creative. Get Noticed!</h2>
+			</div>
+		</div>
+		<!-- Each child div in #showcase represents a slide -->
+		<div class="showcase-slide">
+			<div class="showcase-content">
+				<img src="images/04.jpg" alt="04" />
+			</div>
+			<div class="showcase-thumbnail">
+				<img src="images/04.jpg" alt="04" width="140px" />
+				<div class="showcase-thumbnail-cover"></div>
+			</div>
+		</div>
+		<!-- Each child div in #showcase represents a slide -->
+		<div class="showcase-slide">
+			<div class="showcase-content">
+				<img src="images/03.jpg" alt="03" />
+			</div>
+			<div class="showcase-thumbnail">
+				<img src="images/03.jpg" alt="01" width="140px" />
+				<div class="showcase-thumbnail-cover"></div>
+			</div>
+		</div>
+		<!-- Each child div in #showcase represents a slide -->
+		<div class="showcase-slide">
+			<div class="showcase-content">
+				<img src="images/02.jpg" alt="02" />
+			</div>
+			<div class="showcase-thumbnail">
+				<img src="images/02.jpg" alt="01" width="140px" />
+				<div class="showcase-thumbnail-cover"></div>
+			</div>
+			<!-- Put the tooltips in a div with the class .showcase-tooltips. -->
+			<div class="showcase-tooltips">
+				<!-- Each anchor in .showcase-tooltips represents a tooltip. The coords attribute represents the position of the tooltip. -->
+				<a href="http://www.awkward.se" coords="634,130">
+					<!-- The content of the anchor-tag is displayed in the tooltip. -->
+					This is a tooltip that displays the anchor html in a nice way.
+				</a>
+				<a href="http://www.awkward.se" coords="200,440">
+					This is a tooltip that displays the anchor html in a nice way.
+				</a>
+				<a href="http://www.awkward.se" coords="600,440">
+					This is a tooltip that displays the anchor html in a nice way.
+				</a>
+				<a href="http://www.awkward.se" coords="356, 172">
+					<!-- You can add multiple elements to the anchor-tag which are display in the tooltip. -->
+					<img src="images/glasses.png" />
+					<span style="display: block; font-weight: bold; padding: 3px 0 3px 0; text-align: center;">
+						White Glasses: 500$
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+	<a href="http://www.awkwardgroup.com/sandbox/awkward-showcase-a-jquery-plugin">
+		Click here to download and learn more about this jQuery plugin.
+	</a>
+</div>
+
+</body>
+</html>

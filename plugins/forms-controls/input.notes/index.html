@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<title>InputNotes jQuery Plugin</title>
+
+<link rel="stylesheet" type="text/css" href="global.css" />
+
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript" src="inputnotes.js"></script>
+
+<style type="text/css">
+<!--
+
+div.inputnotes div {
+	font-size: 11px;
+	padding: 3px;
+	padding-left: 4px;
+	padding-top: 4px;
+	margin-top: 2px;
+}
+
+div.inputnotes div.note {
+	color: #fff;
+	background: #333;
+}
+
+div.inputnotes div.warning {
+	color: #fff;
+	background: #f03;
+}
+
+div.inputnotes div.info {
+	color: #333;
+	background: #c4ea74;
+}
+
+ul.inputnotes {
+	margin: 0px;
+}
+
+ul.inputnotes li.note {
+	color: #aaa;
+	margin: 0px;
+	margin-top: 2px;
+	padding: 2px;
+	padding-left: 6px;
+	border-left: 1px #999 dotted;
+	list-style: none;
+}
+
+-->
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#message").inputNotes( 
+		{
+			sexwarning: {
+				pattern: /(^|\s)sex(\s|$)/ig,
+				type: 'warning',
+				text: 'Do not type "sex"!' 
+			},
+			numbersnote: {
+				pattern: /[0-9]/,
+				type: 'note',
+				text: 'Do not type numbers!' 
+			}
+		}
+	);
+	
+	$("#textfield").inputNotes( 
+		{
+			spacewarning: {
+				pattern: /\s/,
+				type: 'warning',
+				text: 'Do not type spaces!'
+			}
+		}
+	);
+	
+	$("#example1").inputNotes( 
+		{
+			email: {
+				pattern: /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+$/,
+				type: 'info',
+				text: 'Yes, that\'s a valid email address!' 
+			}
+		}
+	);
+	$("#example2").inputNotes( 
+		{
+			requiredfield: {
+				pattern: /(^(\s)+$)|(^$)/,
+				type: 'warning',
+				text: 'This field is required!' 
+			}
+		}
+	);
+	$("#example3").inputNotes( 
+		{
+			badwords: {
+				pattern: /(^|\s)(fuck|cunt|ass|nigger|twat)(\s|$)/ig,
+				type: 'warning',
+				text: 'We are a friendly place, don\'t use bad words!' 
+			}
+		}
+	);
+	$("#example4").inputNotes( 
+		{
+			minlength: {
+				pattern: /^(.){0,5}$/i,
+				type: 'info',
+				text: 'Minimum password length is 6 characters.' 
+			},
+			characters: {
+				pattern: /[^a-z0-9]/i,
+				type: 'warning',
+				text: 'Please only alphanumeric characters.' 
+			},
+			alphaandnum: {
+				pattern: /(^[a-z]+$)|(^[0-9]+$)/i,
+				type: 'warning',
+				text: 'Please use both, letters and numbers.' 
+			},
+			bigandsmall: {
+				pattern: /(^[a-z0-9]{2,}$)|(^[A-Z0-9]{2,}$)/,
+				type: 'warning',
+				text: 'Please use both, small and capitalized letters.' 
+			}
+		}
+	);
+	$("#example5").inputNotes( 
+		{
+			tags: {
+				pattern: /<(\S+).*>(.*)<\/\1>/,
+				type: 'warning',
+				text: 'Do not use any HTML, it will be filtered out!' 
+			}
+		}
+	);
+	$("#example6").inputNotes( 
+		{	
+			config: {
+				notePosition: 'before'
+			},
+			warning: {
+				pattern: /^[0-9]+$/,
+				type: 'note',
+				text: 'Only numbers, please ...',
+				inversedBehavior: true
+			},
+			thanks: {
+				pattern: /^[0-9]+$/,
+				type: 'info',
+				text: 'Thx, that\'s how I like it.',
+				inversedBehavior: false
+			}
+		}
+	);
+	$("#example7").inputNotes( 
+		{	
+			config: {
+				containerTag: 'ul',
+				noteTag: 'li'
+			},
+			numbers: {
+		      pattern: /[0-9]/,
+		      type: 'note',
+		      text: 'Numbers, I like numbers.'
+		    },
+		    alphas: {
+		      pattern: /[A-Z]/i,
+		      type: 'note',
+		      text: 'Oh nice, alphas!'
+		    }
+		}
+	);
+});
+	
+</script>
+
+</head>
+<body>
+  <div id="pluginnav">
+	<a href="index.php" class="overview">jQuery Plugins by Fredi Bach</a>  
+	<a href="inputnotes.php">InputNotes</a> 
+	<a href="autoanchors.php">AutoAnchors</a> 
+	<a href="randomclass.php">RandomClass</a> 
+	<a href="removeoverflow.php">RemoveOverflow</a>
+
+</div>  <div id="container">
+    <h1>InputNotes jQuery Plugin</h1>
+    
+    <p>A jQuery plugin to add notes below textareas and input fields based on regex patterns.</p>
+    
+    <p class="contentnav">
+       <a href="#demo">Demo</a>
+       <a href="#usage">Usage</a>
+       <a href="#styling">Styling</a>
+
+       <a href="#download">Download</a>
+       <a href="#compatibility">Compatibility</a>
+       <a href="#changelog">Changelog</a> 
+       <a href="#examples">More Examples</a>
+    </p>
+    
+    <h2 id="demo">Demo</h2>
+    
+    <p>Type something. As soon as you type a number, a note will be added below the textarea. If you type "sex", a warning will be shown.</p>
+
+    
+    <form id="testform">
+      <textarea name="message" id="message" cols=60 rows=4 class="field" /></textarea>
+    
+      <p>You can use it for everything that has values, so for example a text inputfield will do it as well, here an example where we test for spaces:</p>
+    
+      <input type="text" name="textfield" id="textfield" size=60 class="field" />
+    </form>
+    
+    <p>The patterns are normal JavaScript regex patterns and you are free to create and style any type of notes and note texts as you want. Note texts can contain HTML, no problem.</p>
+    
+    <h2 id="usage">Usage</h2>
+
+    
+    <p>This is how you use it:</p>
+    
+    <pre>
+$(document).ready(function(){
+  $("#message").inputNotes( 
+    {
+      sexwarning: {
+        pattern: /(^|\s)sex(\s|$)/ig,
+        type: 'warning',
+        text: 'Do not type "sex"!' 
+      },
+      numbersnote: {
+        pattern: /[0-9]/,
+        type: 'note',
+        text: 'Do not type numbers!' 
+      }
+    }
+  );
+});
+    </pre>
+    
+    <p>If you need to know if there are any notes attached to an element, for example to decide if a form should be submitted or not, here's how:</p>
+    
+    <pre>
+if ( $("#message").hasInputNotes() ){
+  // don't send form
+}
+    </pre>
+    
+    <p>Test: <a href="javascript:void(null);" onclick="alert( $('#message').hasInputNotes() )">Textarea has notes?</a></p>
+
+    
+    <p>You can test for certain note types, too:</p>
+    
+    <pre>
+if ( $("#message").hasInputNotes('warning') ){
+  // don't send form
+}
+    </pre>
+    
+    <p>Test: <a href="javascript:void(null);" onclick="alert( $('#message').hasInputNotes('warning') )">Textarea has warning notes?</a></p>
+    
+    <p>And even for whole forms:</p>
+    
+    <pre>
+if ( $("#testform").hasInputNotes('warning') ){
+  // don't send form
+}
+    </pre>
+
+    
+    <p>Test: <a href="javascript:void(null);" onclick="alert( $('#testform').hasInputNotes('warning') )">Form has warning notes?</a></p>
+
+	<p>If you instantly need to know if a note was added or removed, there are events for that, the <strong>inputnote_added</strong> and <strong>inputnote_removed</strong> events:</p>
+	
+<pre>
+$("#textfield").inputNotes( 
+  {
+    spacewarning: {
+      pattern: /\s/,
+      type: 'warning',
+      text: 'Do not type spaces!'
+    }
+  }
+).bind('inputnote_added',function(e,data){ 
+  alert("Note '"+data.note+"' added!");
+}).bind('inputnote_removed',function(e,data){ 
+  alert("Note '"+data.note+"' removed!");
+});
+
+</pre>
+
+	<p>Additionaly there's the possibility to add callbacks inside the settings hashtable to achieve the same:</p>
+	
+<pre>
+$("#textfield").inputNotes( 
+  {
+    spacewarning: {
+      pattern: /\s/,
+      type: 'warning',
+      text: 'Do not type spaces!',
+      addCallback: logAddNote,
+      removeCallback: logRemoveNote
+    }
+  }
+);
+</pre>
+
+	<p>The callback functions have access to the DOM element (this) and can get the note identifier (item) and note type (type):</p>
+	
+<pre>
+function logAddNote(item,type){
+  alert("Log: '"+item+"' '"+type+"' for '#"+this.attr('id')+"' added!");
+}
+function logRemoveNote(item,type){
+  alert("Log: '"+item+"' '"+type+"' for '#"+this.attr('id')+"' removed!");
+}
+</pre>
+
+    <h3>New since version 0.6:</h3>
+
+    <p>You can now add notes with an inversed behavior (adding a note when the pattern isn't matched). In the case below, we use the same pattern, once to ask for numbers only and than to thank the user for following the rule. Additionaly the note is now displayed on top of the input field with the "notePosition" option.</p>
+
+    <form>
+      <input type="text" name="example6" id="example6" size=60 class="field" />
+    </form>
+
+    <pre>
+
+$("#example6").inputNotes( 
+  {
+    config: {
+	  notePosition: 'before'
+    },
+    warning: {
+      pattern: /^[0-9]+$/,
+      type: 'note',
+      text: 'Only numbers, please ...',
+      inversedBehavior: true
+    },
+    thanks: {
+      pattern: /^[0-9]+$/,
+      type: 'info',
+      text: 'Thx, that\'s how I like it.',
+      inversedBehavior: false
+    }
+  }
+);
+</pre>
+
+    <p>And if you don't want the notes inside div tags, you can chose your own HTML tags like in the following example were we use an unordered list (ul) for the container and list items (li) for the notes:</p>
+
+    <form>
+      <input type="text" name="example7" id="example7" size=60 class="field" />
+    </form>
+
+    <pre>
+$("#example7").inputNotes( 
+  {
+    config: {
+      containerTag: 'ul',
+      noteTag: 'li'
+    },
+    numbers: {
+      pattern: /[0-9]/,
+      type: 'note',
+      text: 'Numbers, I like numbers.' 
+    },
+    alphas: {
+      pattern: /[A-Z]/i,
+      type: 'note',
+      text: 'Oh nice, alphas!'
+    }
+  }
+);
+
+</pre>
+    
+    <h2 id="styling">Styling</h2>
+    
+    <p>This is how you add css styles:</p>
+    
+    <pre>
+div.inputnotes div {
+  padding: 3px;
+  padding-left: 4px;
+  padding-top: 4px;
+  margin-top: 2px;
+}
+
+div.inputnotes div.note {
+  color: #fff;
+  background: #333;
+}
+
+div.inputnotes div.warning {
+  color: #fff;
+  background: #f03;
+}
+    </pre>
+    
+    <p>Each note has a class with the same name as the type of the note, so you are free to create any kind of notes, you don't have to name them note, warning ... just use a name that can be used as a CSS class and everything is fine.</p>
+    
+    <h2 id="download">Download</h2>
+
+    
+    <p>Current version: <a href="js/jquery.inputnotes-0.6.js">jquery.inputnotes-0.6.js</a> (3.3k not minified)</p>
+    
+    <h2 id="compatibility">Compatibility</h2>
+    
+    <p>
+      Tested in:
+      <ul>
+        <li>Internet Explorer 6 and 7</li>
+
+        <li>Firefox 3.5</li>
+        <li>Safari 4</li>
+        <li>Google Chrome</li>
+        <li>Opera 9.6</li>
+      </ul>
+      With:
+      <ul>
+
+        <li>jQuery 1.4</li>
+        <li>jQuery 1.3.2</li>
+      </ul>
+      <p>There really is nothing complicated in there, so expect the plugin to work in older browsers as well.</p>
+    </p>
+    
+    <h2 id="changelog">Changelog</h2>
+    
+    <p>
+
+      <ul>
+        <li>0.2: Added animations</li>
+        <li>0.3: You can now check whole forms</li>
+		<li>0.4: Made it chainable</li>
+		<li>0.5: Added events and callbacks</li>
+		<li>0.6: Added options for inversed behavior and container tags</li>
+
+      </ul>
+    </p>
+    
+    <h2 id="examples">More Examples</h2>
+    
+    <h3>Email check:</h3>
+    
+    <p>Enter a valid email address.</p>
+    
+    <form>
+      <input type="text" name="example1" id="example1" size=60 class="field" />
+
+    </form>
+    
+    <pre>
+$("#example1").inputNotes( 
+  {
+    email: {
+      pattern: /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+$/,
+      type: 'info',
+      text: 'Yes, that\'s a valid email address!' 
+    }
+  }
+);
+    </pre>
+    
+    <h3>Truly required field:</h3>
+    
+    <p>Enter something. If you enter just whitespace, it will still count as empty.</p>
+
+    <form>
+      <input type="text" name="example2" id="example2" size=60 class="field" />
+
+    </form>
+
+    <pre>
+$("#example2").inputNotes( 
+  {
+    requiredfield: {
+      pattern: /(^(\s)+$)|(^$)/,
+      type: 'warning',
+      text: 'This field is required!' 
+    }
+  }
+);
+    </pre>
+    
+    <h3>Bad Words:</h3>
+
+    <p>Enter some text with bad words to get a warning.</p>
+
+    <form>
+
+      <input type="text" name="example3" id="example3" size=60 class="field" />
+    </form>
+
+    <pre>
+$("#example3").inputNotes( 
+  {
+    badwords: {
+      pattern: /(^|\s)(fuck|cunt|ass|nigger|twat)(\s|$)/ig,
+      type: 'warning',
+      text: 'We are a friendly place, don\'t use bad words!' 
+    }
+  }
+);
+</pre>
+
+    <h3>Password strength:</h3>
+
+    <p>Helps you choose a good password.</p>
+
+    <form>
+      <input type="text" name="example4" id="example4" size=60 class="field" />
+    </form>
+
+    <pre>
+$("#example4").inputNotes( 
+  {
+    minlength: {
+      pattern: /^(.){0,5}$/i,
+      type: 'info',
+      text: 'Minimum password length is 6 characters.' 
+    },
+    characters: {
+      pattern: /[^a-z0-9]/i,
+      type: 'warning',
+      text: 'Please only alphanumeric characters.' 
+    },
+    alphaandnum: {
+      pattern: /(^[a-z]+$)|(^[0-9]+$)/i,
+      type: 'warning',
+      text: 'Please use both, letters and numbers.' 
+    },
+    bigandsmall: {
+      pattern: /(^[a-z0-9]{2,}$)|(^[A-Z0-9]{2,}$)/,
+      type: 'warning',
+      text: 'Please use both, small and capitalized letters.' 
+    }
+  }
+);
+</pre>
+
+    <h3>HTML Tags:</h3>
+
+    <p>Don't enter HTML tags or you get a warning.</p>
+
+    <form>
+      <input type="text" name="example5" id="example5" size=60 class="field" />
+    </form>
+
+    <pre>
+$("#example5").inputNotes( 
+  {
+    tags: {
+      pattern: /<(\S+).*>(.*)<\/\1>/,
+      type: 'warning',
+      text: 'Do not use any HTML, it will be filtered out!' 
+    }
+  }
+);
+</pre>
+
+    
+    <div id="footer">Copyright (c) 2010 Fredi Bach - <a href="http://fredibach.ch" target="_blank">fredibach.ch</a></div>
+    
+  </div>
+</body>
+</html>

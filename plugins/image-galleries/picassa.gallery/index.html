@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
+	<!--[if IE]><![endif]-->
+	<title>My Photo Gallery</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+	
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+	
+	<link href="css/picasa_min.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="img/favicon.ico">
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie6 ie"> <![endif]-->
+<!--[if IE 7 ]>    <body class="ie7 ie"> <![endif]-->
+<!--[if IE 8 ]>    <body class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>    <body class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+	
+<header>
+	<h1> <a href="index.html">My Photo Gallery </a> </h1>
+</header>
+
+<div id="container" class="clearfix">
+	<ul id="albums" class="clearfix"></ul>
+</div>
+
+<footer>	
+	<div id="controls">
+		<form method="post" id="form">
+			<button id="clearCache"> Clear Cache </button>
+			<input type="range" name="range" min="4" max="10" step="1" value="" />
+			<output name="result"> </output>
+		</form>
+	</div>
+</footer>
+
+<div class="lightbox"> <div class="photoMeta"></div> </div>
+<div id="albumsListWrap">	
+	<h4> Browse Albums </h4>
+</div>
+
+<img src="img/ajax-loader.gif" alt="Please Wait" class="loader" />
+
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script src="ZeroClipboard.js"></script>
+<script src="picasa.js"></script>
+
+<script>
+// DELETE THIS ALERT!!!!!!!!! :)
+alert('Edit the source of index.html, scroll to the bottom, and change the username value to your Picasa username. When you are finished, delete the alert line above it. This is just a sample Picasa gallery with only one album, for demo purposes. :)');
+
+$('body').picasaGallery({
+	username : 'nettutsblog' // CHANGE THIS TO YOUR PICASA USERNAME
+});
+</script>
+
+
+
+
+</body>
+</html>

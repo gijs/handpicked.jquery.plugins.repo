@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]--> 
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Demo - Vegas Background jQuery Plugin</title>
+<meta name="description" content="A real life demonstration of Vegas in action. Vegas is a jQuery plugin to add fullscreen backgrounds to your webpages.">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold"> 
+<link rel="stylesheet" type="text/css" href="jquery.vegas.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript" src="jquery.vegas.js"></script>
+<script type="text/javascript" src="global.js"></script>
+<link rel="stylesheet" type="text/css" href="global_styles.css">
+<script>
+$( function() { 
+    var slideshowRunning = false,
+		backgroundList = [];
+
+    // Build the background list with href of links
+    $( '#menu a' ).each( function() { 
+        backgroundList.push( { 
+            src: $( this ).attr( 'href' ),
+            valign: $( this ).data( 'valign' ),
+			fade: 3000
+         } );
+     } );
+		
+    // Define a slideshow with overlay and pause it
+	$.vegas( backgroundList[3] )
+	( 'overlay', {
+		opacity: 0.5
+	})
+	( 'pause' );
+
+    // A short demo
+    $( '#menu a' ).click( function() { 
+	
+        // If the SlideShow link is clicked
+        if ( $( this ).is( '#slideshow' ) ) { 
+		
+            // Start the SlideShow
+            if ( slideshowRunning == false ) { 
+                slideshowRunning = true;
+				
+                $( '#pause' )
+					.show()
+					.css( 'opacity', 0.5 )
+					.html( 'PAUSE' );
+					
+				$.vegas( 'slideshow', { 
+					delay: 5000,
+					backgrounds: backgroundList,
+				})
+				
+            // Pause the SlideShow
+             } else { 
+                slideshowRunning = false;
+				
+                $( '#pause' )
+					.show()
+					.css( 'opacity', 0.5 )
+					.html( 'PLAY' );
+					
+                $.vegas( 'pause' );  
+             }
+            
+       	// If a standard Thumbnail is clicked
+         } else { 
+			slideshowRunning = false;
+			
+            $( '#pause' ).hide();
+			$( '#thumbnail' ).attr( 'src', 'images/slideshow.gif' );
+
+			var idx = $( this ).parent( 'li' ).index();
+			$.vegas( 'stop' )( backgroundList[idx] );
+         }
+		 
+         return false;
+     } );
+	 
+	// Apply a border to the right thumbnail when a background is loaded
+	$( 'body' ).bind( 'vegasload', function( e, bg ) {	    
+	    var src = $( bg ).attr( 'src' ).replace( 'background', 'thumbnail' );
+		
+		$( '#menu img' )
+			.css( 'border', '1px solid #FFF' ); 
+		$( 'img[src="' + src + '"]' )
+			.css( 'border', '1px solid #CF0' );
+	});
+	
+	// Display the right thumbnail instead of the slideshow animated gif when the slideshow is running
+	$( 'body' ).bind( 'vegaswalk', function( e, bg ) {
+	    var src = $( bg ).attr( 'src' ).replace( 'background', 'thumbnail' );
+		
+		$( '#thumbnail' ).attr( 'src', src );
+	});
+ } );
+</script>
+</head>
+
+<body id="demo">
+<div id="container">
+    <h1><span class="vegas">Vegas</span><br>Background<br>jQuery Plugin</h1>
+    <p><small>Design & Development by <a href="http://jaysalvat.com" title="jaysalvat.com">Jay Salvat</a>, Pictures by <a href="http://sebastienisrael.com" title="sebastienisrael.com">Sebastien Israel</a></small></p>
+    <ul id="menu">
+        <li><a href="images/background-1.jpg" data-valign="top"><img src="images/thumbnail-1.jpg"></a></li>
+        <li><a href="images/background-2.jpg" data-valign="top"><img src="images/thumbnail-2.jpg"></a></li>
+        <li><a href="images/background-3.jpg" data-valign="top"><img src="images/thumbnail-3.jpg"></a></li>
+        <li><a href="images/background-4.jpg" id="slideshow"><span id="pause"></span><img id="thumbnail" src="images/slideshow.gif"></a></li>
+    </ul>
+    <p><small>&laquo; Real Life &raquo; Demo of the <a href="/">vegas Background jQuery plugin</a></small></p>
+</div>
+<div id="footer">
+     Go back to <a href="/">Vegas Website</a>
+</div>
+
+</body>
+</html>

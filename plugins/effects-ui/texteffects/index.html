@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>grab bag</title>
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link rel="stylesheet" href="main.css" type="text/css">
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://onehackoranother.com/feed/">
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://onehackoranother.com/feed/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="http://onehackoranother.com/feed/atom/">
+
+<script type="text/javascript" src="project.js"></script>
+
+
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+
+<!-- per project includes -->
+
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+
+
+
+<!-- end per project includes -->
+
+</head>
+  
+<body onload="boot();">
+  
+  <div id="container">
+    
+    <h1>
+      grab bag
+      <span class="subtitle"> - assorted jQuery plugins</span>
+    </h1>
+    
+    <div id="main">
+      
+
+<script type="text/javascript" src="text.js"></script>
+
+<h2>Text Effects</h2>
+
+<p>Some fun little text effects. These manipulate <code>$(ele).text()</code> so will
+  probably be disastrously broken with inner HTML content.</p>
+
+<h3>ROT-13</h3>
+<p>(also applies ROT-5 to numerics)</p>
+<pre>$("#my-container").rot13();</pre>
+<p><a href="#" onclick='$("#rot13").rot13(); return false;'>Run demo</a></p>
+<div id="rot13">Yberz vcfhz qbybe fvg nzrg, pbafrpgrghe nqvcvfvpvat 
+ryvg, frq qb rvhfzbq grzcbe vapvqvqhag hg ynober rg qbyber zntan nyvdhn.
+ Hg ravz nq zvavz iravnz, dhvf abfgehq rkrepvgngvba hyynzpb ynobevf avfv
+ hg nyvdhvc rk rn pbzzbqb pbafrdhng. Qhvf nhgr veher qbybe va 
+erceruraqrevg va ibyhcgngr iryvg rffr pvyyhz qbyber rh shtvng ahyyn 
+cnevnghe. Rkprcgrhe fvag bppnrpng phcvqngng aba cebvqrag, fhag va phycn 
+dhv bssvpvn qrfrehag zbyyvg navz vq rfg ynobehz.</div>
+
+<h3>Typewriter</h3>
+<pre>$("#my-container").typewriter();</pre>
+<p><a href="#" onclick='$("#typewriter").typewriter(); return false;'>Run demo</a></p>
+<div id="typewriter">Lorem ipsum dolor sit amet, consectetur adipisicing
+ elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+qui officia deserunt mollit anim id est laborum.</div>
+
+<h3>Unscramble</h3>
+<pre>$("#my-container").unscramble();</pre>
+<p><a href="#" onclick='$("#unscramble").unscramble(); return false;'>Run demo</a></p>
+<div id="unscramble">Lorem ipsum dolor sit amet, consectetur adipisicing
+ elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+qui officia deserunt mollit anim id est laborum.</div>
+
+<h3>Scrambled Writer</h3>
+<pre>$("#my-container").scrambledWriter();</pre>
+<p><a href="#" onclick='$("#scrambled-writer").scrambledWriter(); return false;'>Run demo</a></p>
+<div id="scrambled-writer">Lorem ipsum dolor sit amet, consectetur 
+adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+ laboris nisi ut aliquip ex iJ lLO1Dkq CYjJXIlk0d iHCH XIta gEcNZ aHXi9 
+vl KhgCHbEngvyhf Cd 31CnIuJS9 74kyq mLkE AJMUce A0Fwp1 4G QTDbEs 9hqlW 
+l4wi2Db8Y ncwIVkkba SL2T m1vyWvRO s4emd4DMi IXg OJpFVYf6L zBeY 1a AkTbO 
+NM1 F1TlCp2 h4bfvrsu wPpZgn 9NH4 CM vzD j0IwDse</div>
+
+<h2>Direct Link</h2>
+
+<p><a href="http://github.com/jaz303/jquery-grab-bag/tree/master/javascripts/jquery.text-effects.js">jquery.text-effects.js</a></p>
+
+
+    </div>
+    
+    <div id="sidebar">
+      <ul id="project-nav">
+        
+          <li><a href="http://onehackoranother.com/projects/jquery/jquery-grab-bag/index.html">Plugin List</a></li>
+        
+      </ul>
+
+      <ul id="ohoa-nav">
+        <li><a href="http://onehackoranother.com/feed/" id="subscribe">Subscribe for updates »</a></li>
+        <li><a href="http://twitter.com/jaz303" id="twitter">Follow me on Twitter »</a></li>
+        <li><a href="http://onehackoranother.com/projects/">Back to projects »</a></li>
+        <li><a href="http://onehackoranother.com/">Back to onehackoranother.com »</a></li>
+      </ul>
+
+      <a href="http://thepixeltrap.com/" id="pixel-trap" title="The Pixel Trap: New Directory for Web Professionals">
+        The Pixel Trap - A New Directory for Web Professionals
+      </a>
+    </div>
+
+  </div>
+  
+  
+    <script src="js.js" type="text/javascript"></script>
+    <script type="text/javascript">clicky.init(22334);</script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="http://static.getclicky.com/22334ns.gif" /></p></noscript>
+
+
+
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>SexyLightBox 2.3 - www.coders.me</title>
+  <link rel="stylesheet" href="global.css" type="text/css" media="all" />
+
+
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="sexylightbox.v2.3.jquery.min.js"></script>
+  <link rel="stylesheet" href="sexylightbox.css" type="text/css" media="all" />
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      SexyLightbox.initialize({color:'white'});
+    });
+  </script>
+
+
+
+
+  <style>
+  .alertbox
+  {
+    background  : url(images/dialog-help.png) no-repeat scroll left top;
+    margin      : 0 10px;
+    padding     : 0 0 5px 40px;
+    font-family : Verdana;
+    font-size   : 12px;
+    text-align  : left;
+  }
+  .alertbox .buttons
+  {
+    text-align  : right;
+  }
+  </style>
+
+</head>
+
+<body>
+    <div id="top">
+        <div id="header">
+        
+            <div id="login-form" style="text-align: right;">
+              <a href="http://www.coders.me/web-html-js-css/javascript/sexy-lightbox-2">Volver al Blog</a>
+            </div>
+            
+            <h1>Sexy <span>LightBox 2.3</span></h1>
+        </div>
+
+        <div class="message">
+            <p>El LightBox más sexy de todos.</p>
+        </div>
+        
+        <div class="hastoc">
+        <p>SexyLightBox is a clon, sexier and more lightweight than the classic LightBox. It was constructed while thinking about web designers toward an easy installation and use. The following examples will show you why it is considered to be "sexy".</p>
+
+        <h2 id="images"><span><a href="#top">Subir</a></span>Images</h2>
+        <div>
+            <p>Large images are automatically adjusted to window.</p>
+            <h3>Image</h3>
+            <div class="img_container">
+            	<ul>
+            		<li><a href="images/puente_mujer.jpg" rel="sexylightbox" title="Puente de la Mujer - Buenos Aires - Argentina" ><img src="images/small_puente_mujer.jpg" alt="" /></a></li>
+            		<li><a href="images/neuquen.jpg"      rel="sexylightbox" title="Neuquén - Patagonia Argentina" ><img src="images/small_neuquen.jpg" alt="" /></a></li>
+            		<li><a href="images/iguazu02.jpg?width=400&height=300"   title="Cataratas del Iguazú" rel="sexylightbox" ><img src="images/small_iguazu02.jpg" alt="" /></a></li>
+            	</ul>
+            </div>
+<pre>
+&lt;a <b>href</b>="images/puente_mujer.jpg" <b>rel</b>="sexylightbox" <b>title</b>="Puente de la Mujer - Buenos Aires - Argentina"&gt;
+  &lt;img src="images/small_puente_mujer.jpg" alt="" /&gt;
+&lt;/a&gt;
+
+&lt;a <b>href</b>="images/neuquen.jpg" <b>rel</b>="sexylightbox" <b>title</b>="Neuquén - Patagonia Argentina"&gt;
+  &lt;img src="images/small_neuquen.jpg" alt="" /&gt;
+&lt;/a&gt;
+
+&lt;a <b>href</b>="images/iguazu02.jpg?<b>width</b>=400&<b>height</b>=300" <b>rel</b>="sexylightbox" <b>title</b>="Cataratas del Iguazú"&gt;
+  &lt;img src="images/small_iguazu02.jpg" alt="" /&gt;
+&lt;/a&gt;
+
+</pre>
+            <h3>Gallery</h3>
+            <div class="img_container">
+            	<ul>
+            		<li><a href="images/php_mysql.jpg" rel="sexylightbox[group1]" title="PHP y MySQL"><img src="images/small_php_mysql.jpg" alt=""/></a></li>
+            		<li><a href="images/homerin2.jpg"  rel="sexylightbox[group1]" title="D'oh!"><img src="images/small_homerin2.jpg" alt=""/></a></li>
+            		<li><a href="images/clapclap.jpg"  rel="sexylightbox[group1]" title="Clap clap!"><img src="images/small_clapclap.jpg" alt=""/></a></li>
+            	</ul>
+            </div>
+<pre>
+&lt;a <b>href</b>="images/php_mysql.jpg" <b>rel</b>="sexylightbox[group1]" <b>title</b>="PHP y MySQL"&gt;
+  &lt;img src="images/small_php_mysql.jpg" alt=""/&gt;
+&lt;/a&gt;
+
+&lt;a <b>href</b>="images/homerin.jpg"   <b>rel</b>="sexylightbox[group1]" <b>title</b>="D'oh!"      &gt;
+  &lt;img src="images/small_homerin2.jpg" alt=""/&gt;
+&lt;/a&gt;
+
+&lt;a <b>href</b>="images/futurama.jpg"  <b>rel</b>="sexylightbox[group1]" <b>title</b>="Clap clap!" &gt;
+  &lt;img src="images/small_clapclap.jpg" alt=""/&gt;
+&lt;/a&gt;
+
+</pre>
+            <h3>Animated Gifs</h3>
+            <div class="img_container">
+            	<ul>
+            		<li><a href="images/yo.gif"  rel="sexylightbox" ><img src="images/yo.jpg" alt=""/></a></li>
+            		<li><a href="images/ryu.gif" rel="sexylightbox" title="Shinkuu Hadouken!!!" ><img src="images/small_ryu.jpg" alt=""/></a></li>
+            	</ul>
+            </div>
+<pre>
+&lt;a <b>href</b>="images/yo.gif"  <b>rel</b>="sexylightbox" &gt;
+  &lt;img src="images/yo.jpg" alt=""/&gt;
+&lt;/a&gt;
+
+&lt;a <b>href</b>="images/ryu.gif" <b>rel</b>="sexylightbox" <b>title</b>="Shinkuu Hadouken!!!" &gt;
+  &lt;img src="images/small_ryu.jpg" alt=""/&gt;
+&lt;/a&gt;
+
+</pre>
+
+        </div>
+        
+        <h2 id="content"><span><a href="#top">Subir</a></span>Content</h2>
+        <div>
+            <h3>Inline Content</h3>
+
+            <div id="myOnPageContent">
+              <p><a href="images/2007_Audi_R8_01.jpg" rel="sexylightbox" title="Audi R8" class="imageborder" onclick="SexyLightbox.display('images/2007_Audi_R8_01.jpg', 'Audi R8'); return false;"><img src="images/small_2007_Audi_R8_01.jpg" alt=""/></a>
+              The <b>Audi R8</b> is a mid-engined sports car introduced by the German automaker Audi in 2006. The R8 is based on the "Audi Space Frame", largely derived from the Lamborghini Gallardo. It is built in a newly renovated factory by Audi AG's wholly owned high performance private subsidiary company, quattro GmbH.</p>
+            </div>
+            <br clear="all"/>
+            
+            <div id="videito1" style="display:none;"><object width="320" height="265"><param name="movie" value="http://www.youtube.com/v/eBlffs9qg0k&hl=es&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/eBlffs9qg0k&hl=es&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="265"></embed></object></div>
+            <div id="videito2" style="display:none;"><object width="530" height="260"><param name="movie" value="http://www.youtube.com/v/WyA1dzfKywg&hl=es&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/WyA1dzfKywg&hl=es&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="530" height="260"></embed></object></div>
+            <div id="videito3" style="display:none;"><object width="450" height="242"><param name="movie" value="http://www.traileraddict.com/emd/7067"></param><param name="allowscriptaccess" value="always"><param name="wmode" value="transparent"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.traileraddict.com/emd/7067" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent" width="450" height="242" allowFullScreen="true"></embed></object></div>
+            <p>
+              <a href="#TB_inline?height=125&width=500&inlineId=myOnPageContent" rel="sexylightbox[22]" title="<em>From <a href='http://en.wikipedia.org/wiki/Audi_R8' rel='nofollow'>Wikipedia</a>, the free encyclopedia.</em>">Show HTML</a>
+            </p>
+            <p>
+              <a href="#TB_inline?height=125&width=350&inlineId=myOnPageContent" rel="sexylightbox[22]" title="<em>From <a href='http://en.wikipedia.org/wiki/Audi_R8' rel='nofollow'>Wikipedia</a>, the free encyclopedia.</em>">Show HTML with scrollbar</a>
+            </p>
+            <p>
+              <a href="#TB_inline?height=265&width=320&background=#fff&inlineId=videito1" rel="sexylightbox[22]" title="Eres para mi - Julieta Venegas">Play Video Julieta Venegas</a>
+            </p>
+            <p>
+              <a href="#TB_inline?height=260&width=530&background=#fff&inlineId=videito2" rel="sexylightbox">Play Video Rambo Extreme Masacre</a>
+            </p>
+            <p>
+              <a href="#TB_inline?height=242&width=450&background=#fff&modal=1&inlineId=videito3" rel="sexylightbox">Play Video Rise of the Lycans in Modal Lightbox</a>
+            </p>
+
+<pre>
+&lt;a <b>href</b>="#TB_inline?<b>height</b>=125&<b>width</b>=500&<b>inlineId</b>=myOnPageContent" <b>rel</b>="sexylightbox[22]" <b>title</b>="..."&gt;
+  Show HTML
+&lt;/a&gt;
+
+&lt;a <b>href</b>="#TB_inline?<b>height</b>=125&<b>width</b>=350&<b>inlineId</b>=myOnPageContent" <b>rel</b>="sexylightbox[22]" <b>title</b>="..."&gt;
+  Show HTML with scrollbar
+&lt;/a&gt;
+
+&lt;a <b>href</b>="#TB_inline?<b>height</b>=265&<b>width</b>=320&<b>background</b>=#fff&<b>inlineId</b>=videito1" <b>rel</b>="sexylightbox[22]" <b>title</b>="..."&gt;
+  Play Video Julieta Venegas
+&lt;/a&gt;
+
+&lt;a <b>href</b>="#TB_inline?<b>height</b>=260&<b>width</b>=530&<b>background</b>=#fff&<b>inlineId</b>=videito2" <b>rel</b>="sexylightbox"&gt;
+  Play Video Rambo Extreme Masacre
+&lt;/a&gt;
+
+&lt;a <b>href</b>="#TB_inline?<b>height</b>=242&<b>width</b>=450&<b>background</b>=#fff&<b>modal</b>=1&<b>inlineId</b>=videito3" <b>rel</b>="sexylightbox"&gt;
+  Play Video Rise of the Lycans in Modal Lightbox
+&lt;/a&gt;
+
+</pre>
+
+            <h3>Iframe Content</h3>
+            <p>
+              <a href="http://www.google.com?TB_iframe=true&height=450&width=800" rel="sexylightbox" >Gooooogle</a>
+            </p>
+            <p>
+              <a href="demo-iframe.html?TB_iframe=true&height=200&width=350" rel="sexylightbox" >Iframe Example </a>
+            </p>
+<pre>
+&lt;a <b>href</b>="http://www.google.com?<b>TB_iframe</b>=true&<b>height</b>=450&<b>width</b>=800" <b>rel</b>="sexylightbox" &gt;Gooooogle&lt;/a&gt;
+
+&lt;a <b>href</b>="demo-iframe.html?<b>TB_iframe</b>=true&<b>height</b>=150&<b>width</b>=300" <b>rel</b>="sexylightbox" &gt;Iframe Example&lt;/a&gt;
+
+</pre>
+
+            <h3>AJAX Content</h3>
+            <p>
+              <a href="demo-data.html?height=140&width=480" rel="sexylightbox" title="Contenido cargado via AJAX">Get data!</a>
+            </p>
+            <p>
+              <a href="demo-login.html?height=150&width=350" rel="sexylightbox" >Login Box</a>
+            </p>
+            <p>
+              <a href="demo-shake.html?height=150&width=350" rel="sexylightbox" >Shake Effect</a>
+            </p>
+            <p>
+              <a href="demo-alert.php?height=90&width=430&modal=1&background=white" rel="sexylightbox" >AlertBox</a>
+            </p>
+<pre>
+&lt;a <b>href</b>="demo-data.html?<b>height</b>=140&<b>width</b>=480"  <b>rel</b>="sexylightbox" <b>title</b>="Contenido cargado via AJAX."&gt;Get data&lt;/a&gt;
+
+&lt;a <b>href</b>="demo-login.html?<b>height</b>=150&<b>width</b>=350" <b>rel</b>="sexylightbox" &gt;Login Box&lt;/a&gt;
+
+&lt;a <b>href</b>="demo-shake.html?<b>height</b>=150&<b>width</b>=350" <b>rel</b>="sexylightbox" &gt;Shake Effect&lt;/a&gt;
+
+&lt;a <b>href</b>="demo-alert.php?<b>height</b>=90&<b>width</b>=430&<b>modal</b>=1&<b>background</b>=white" <b>rel</b>="sexylightbox" &gt;AlertBox&lt;/a&gt;
+
+</pre>
+
+
+        </div>
+
+
+        <h2 id="license"><span><a href="#top">Subir</a></span>Licencia MIT</h2>
+        <div>
+            <p>Copyright (c) 2008-2009 www.coders.me (Eduardo D. Sada)</p>
+
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+
+            <p>The above copyright notice and this permission notice shall be included in
+            all copies or substantial portions of the Software.</p>
+
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+            THE SOFTWARE.</p>
+        </div>
+        <h2 id="download"><span><a href="#top">Subir</a></span>Descargar</h2>
+        <div>
+          <p>Puedes descargar SexyLightBox 2 desde el blog <a href="http://www.coders.me/web-html-js-css/javascript/sexy-lightbox-2#download">www.coders.me</a></p>
+        </div>
+	</div>
+	</div>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-2851998-1");
+  pageTracker._trackPageview();
+  </script>
+
+</body>
+</html>

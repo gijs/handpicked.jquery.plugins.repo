@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+           idTabs ~ Sean Catchpole
+  The examples below are for you to learn from.
+        Please steal any and all code.
+-->
+<head><title>idTabs</title>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="main.css" type="text/css" title='main' media="screen" />
+<link rel="stylesheet" href="page.css" type="text/css" title='main' media="screen" />
+<link rel="stylesheet" href="chili.recipes.css" type="text/css" title='main' media="screen" />
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="jquery.newsticker.pack.js"></script>
+<script type="text/javascript" src="jquery.chili.pack.js"></script>
+<script type="text/javascript" src="chili.recipes.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</head><body>
+<div id="main">
+  <div id="header">
+    <h1><em>jQuery</em> idTabs</h1>
+    <h2>Sean Catchpole</h2>
+    <ul>
+      <li>idTabs is simple and easy to use.</li>
+      <li>It's not overloaded with features, it gets to the point.</li>
+      <li>idTabs may not be for everyone, please consult your doctor before use.</li>
+    </ul>
+    <a href="jquery.idTabs.min.js">Download</a>
+    <div id="source"><span>View Source</span></div>
+  </div>
+  <div id="content">
+    <ul id="mainTabs">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#usual">Usual</a></li>
+      <li><a href="#free">Freedom</a></li>
+      <li><a href="#advanced">Advanced</a></li>
+    </ul>
+    <div class="clear"></div>
+
+<!-- Usual Examples -->
+    <div id="usual" style="display:none;">
+      <div class="example">
+        <span><em>Usual use of tabs</em>View Source</span><pre></pre><div>
+
+          <div id="usual1" class="usual">
+            <ul>
+              <li><a href="#tab1">Tab 1</a></li>
+              <li><a href="#tab2">Tab 2</a></li>
+              <li><a href="#tab3">Tab 3</a></li>
+            </ul>
+            <div id="tab1">This is tab 1.</div>
+            <div id="tab2">More content in tab 2.</div>
+            <div id="tab3">Tab 3 is always last!</div>
+          </div>
+
+          <script type="text/javascript">
+            $("#usual1 ul").idTabs();
+          </script>
+
+      </div></div>
+      <div class="example">
+        <span><em>Example of selecting default tab</em>View Source</span><pre></pre><div>
+
+          <div id="usual2" class="usual">
+            <ul>
+              <li><a href="#tabs1">Tab 1</a></li>
+              <li><a href="#tabs2">Tab 2</a></li>
+              <li><a href="#tabs3">Tab 3</a></li>
+            </ul>
+            <div id="tabs1">This is tab 1.</div>
+            <div id="tabs2">More content in tab 2.</div>
+            <div id="tabs3">Tab 3 is always last!</div>
+          </div>
+
+          <script type="text/javascript">
+            $("#usual2 ul").idTabs("tabs2");
+          </script>
+
+      </div></div>
+      <div class="example">
+        <span><em>Example of javascriptless use</em>View Source</span><pre></pre><div>
+
+          <div class="usual">
+            <ul class="idTabs">
+              <li><a href="#idTab1">Tab 1</a></li>
+              <li><a href="#idTab2">Tab 2</a></li>
+              <li><a href="#idTab3" class="selected">Tab 3</a></li>
+            </ul>
+            <div id="idTab1">This is tab 1.</div>
+            <div id="idTab2">More content in tab 2.</div>
+            <div id="idTab3">Tab 3 is always last!</div>
+          </div>
+
+      </div></div>
+    </div>
+
+<!-- Freedom Examples -->
+    <div id="free" style="display:none;">
+      <div class="example">
+        <span><em>Now there is more freedom</em>View Source</span><pre></pre><div>
+
+          <ul id="freedom" class="idTabs">
+            <li>Freedom</li>
+            <li><a href="#one">First</a></li>
+            <li><a href="#two">Second</a></li>
+            <li><a href="#three">Third</a></li>
+            <li><a href="#four">Fourth</a></li>
+          </ul>
+
+          <div class="tabContainer">
+            <h3>Tab Container</h3>
+            <p id="one">This is my first tab.</p>
+            <p id="two">This is my second tab.</p>
+          </div>
+
+          <img id="three" src="jquery_logo.gif" alt="Even images can be a tab"/>
+
+          <span id="four">Message four over here!</span>
+
+        </div><div class="clear"></div></div>
+      <div class="example">
+        <span><em>Break out of the traditional list</em>View Source</span><pre></pre><div>
+
+          <div class="imagebox idTabs">
+            <a href="#img1">1</a>
+            <a href="#img2">2</a>
+            <a href="#img3">3</a>
+            <a href="#img4">4</a>
+            <img id="img1" src="http://www.sunsean.com/images/symbol/_brace.png"/>
+            <img id="img2" src="http://www.sunsean.com/images/symbol/_lambda.png"/>
+            <img id="img3" src="http://www.sunsean.com/images/symbol/_beta.png"/>
+            <img id="img4" src="http://www.sunsean.com/images/symbol/_paren.png"/>
+          </div>
+
+          <script type="text/javascript">
+            $(".imagebox").idTabs("!mouseover");
+          </script>
+
+      </div></div>
+    </div>
+
+<!-- Advanced Examples -->
+    <div id="advanced" style="display:none;">
+      <div class="example">
+        <span><em>Strange arguments and url changing</em>View Source</span><pre></pre><div>
+
+          <div id="adv1" class="usual">
+            <ul>
+              <li><a href="#t1">Tab 1</a></li>
+              <li><a href="#t2">Tab 2</a></li>
+              <li><a href="#t3">Tab 3</a></li>
+            </ul>
+            <div id="t1">This is tab 1.</div>
+            <div id="t2">More content in tab 2.</div>
+            <div id="t3">Tab 3 is always last!</div>
+          </div>
+
+          <script type="text/javascript">
+            var settings = { start:1, change:false };
+            $("#adv1 ul").idTabs(settings,true);
+          </script>
+
+      </div></div>
+      <div class="example">
+        <span><em>Animation</em>View Source</span><pre></pre><div>
+
+          <div id="adv2">
+            <ul>
+              <li><a href="#ani1">1</a></li>
+              <li><a href="#ani2">2</a></li>
+              <li class="split"></li>
+              <li><a href="#ani3">3</a></li>
+              <li><a href="#ani4">4</a></li>
+            </ul>
+            <span>
+              <p id="ani1">Click on the tabs to see a nice fade.</p>
+              <p id="ani2">You're not impressed?</p>
+              <p id="ani3">But it's so cool... in a nerdy way.</p>
+              <p id="ani4">Download idTabs and have your cake. You can eat it too.</p>
+            </span>
+          </div>
+
+          <script type="text/javascript">
+            $("#adv2").idTabs(function(id,list,set){
+              $("a",set).removeClass("selected")
+              .filter("[href='"+id+"']",set).addClass("selected");
+              for(i in list)
+                $(list[i]).hide();
+              $(id).fadeIn();
+              return false;
+            });
+          </script>
+
+      </div><div class="clear"></div></div>
+      <div class="example">
+        <span><em>Custom functions</em>View Source</span><pre></pre><div>
+
+          <span id="adv3">
+            <a href="#cake">Cake</a> vs <a href="#pie">Pie</a>
+            <p id="cake">Cake is great</p>
+            <p id="pie">So is pie</p>
+            <div id="message"></div>
+          </span>
+
+          <script type="text/javascript">
+            $("#adv3").idTabs(function(id){
+              switch(id){
+                case "#cake": $("#message").html("It's so delicous and moist!"); break;
+                case "#pie":  $("#message").html("Just the way mom makes it."); break;
+              } return true;
+            });
+          </script>
+
+      </div></div>
+    </div>
+
+<!-- Page Specific Code beyond here -->
+    <div id="home">
+      <p style="margin:10px auto; text-align:center;"><sub>Psst, here's beta copy of <a href="idTabs.3.0.zip">idTabs 3.0</a>. Email me if you have questions. <img src="/email.gif"/></sub></p>
+      <h2>Version 2.2</h2>
+      <p>Here's what's new.</p>
+      <p><ul>
+        <li>Changed option 'return' to 'change'
+          <sub>Removes confusion with javascript's return</sub></li>
+        <li>Added ability to dynamically add idTabs
+          <sub>The most requested feature</sub></li>
+        <li>Added 'selected' class option
+          <sub>More freedom rules!</sub></li>
+        <li>Added ability to change defaults
+          <sub>Now you can select no tab to be shown at start</sub></li>
+        <li>Bind idTabs to different event
+          <sub>Switching idTabs via !mouseover</sub></li>
+        <li>Auto-loading of dependencies
+          <sub>Cleaned up the code and added more comments</sub></li>
+      </ul></p>
+      <h2>idTabs, the <i>whatever</i> plugin</h2>
+      <p>idTabs is a plugin for <a href="http://www.jquery.com">jQuery</a>.<br/>
+        It makes adding tabs into a website <i>super</i> simple.<br/>
+        But it can also open the door to endless possiblities.<br/>
+        <br/>
+        Getting started is easy, just <a href="jquery.idTabs.min.js">download</a> the program above,<br/>
+        and copy and paste the following code into the <code class="html">&lt;head&gt;</code>
+      </p>
+      <pre><code class="html">&lt;script type="text/javascript" src="jquery.idTabs.min.js"&gt;&lt;/script&gt;</code></pre>
+      <p>Now any <code class="html">&lt;a href="#tab"&gt;</code> inside of an element with <code class="color">class="idTabs"</code><br/>
+        will show the element with <code class="color">id="tab"</code>. See below for a better example.</p>
+      <br/>
+      <pre style="text-align:left"><code class="html">&lt;ul class="idTabs"&gt;
+  &lt;li&gt;&lt;a href="#jquery"&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#official"&gt;Tabs 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="jquery"&gt;If you haven't checked out ...&lt;/div&gt;
+&lt;div id="official"&gt;idTabs is only a simple ...&lt;/div&gt;</code></pre>
+      <div class="usual">
+          <ul class="idTabs">
+            <li><a href="#jquery">jQuery</a></li>
+            <li><a href="#official">Tabs 3</a></li>
+          </ul>
+          <div id="jquery">If you haven't checked out <a href="http://www.jquery.com">jQuery</a> yet, I highly recommend it.</div>
+          <div id="official">idTabs is only a simple implimentation of tabs. If you want advanced features like ajax tabs, then I highly recommend the official <a href="http://www.stilbuero.de/jquery/tabs_3/">Tabs 3 plugin</a>.</div>
+      </div>
+      <em>Please let me know if you comments, questions, suggestions, rants, raves,<br/>and anything else you can think of, about idTabs. <img src="http://www.sunsean.com/email.gif"/></em>
+
+      <div id="donate" style="margin-top:5px; text-align:center;">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <a href="#donate" class="donate">Donate</a>
+          <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----" />
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $("code.color").removeClass("color").addClass("html")
+        .each(function(){
+          $(this).text( "&lt;a " + $(this).text() + "&gt;" ).chili()
+          t = $(this).html();
+          $(this).html(t.substr(37,t.length-80).replace(/&nbsp;/,""))
+        });
+        $("#mainTabs").idTabs();
+        $("#donate .donate").click(function(){ $("#donate form").submit(); return false; });
+      });
+    </script>
+    </div>
+</div>
+<script type="text/javascript" src="/s/g.js"></script>
+</body></html>
+

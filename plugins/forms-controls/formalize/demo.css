@@ -1,0 +1,1 @@
+@import 'reset.css';@import 'text.css';@import 'formalize.css';body{background:#fff;color:#000}#wrapper{margin:0 auto;padding:20px;width:800px}label.error{background:#ffc;color:#c00;font-style:italic}input.error,select.error,textarea.error{background-color:#fee}.horiz{margin-top:-20px;margin-left:-20px}.horiz td{padding:20px 0 0 20px}

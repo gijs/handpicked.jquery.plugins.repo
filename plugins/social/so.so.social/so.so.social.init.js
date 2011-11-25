@@ -1,0 +1,1 @@
+sss.TWITTER_RSS="http://twitter.com/statuses/user_timeline/35092196.rss";sss.LASTFM_RSS="";sss.FACEBOOK_RSS="";sss.FLICKR_RSS="";sss.DELICIOUS_RSS="";sss.TUMBLR_RSS="";sss.WORDPRESS_RSS="";sss.POSTEROUS_RSS="";sss.LIMIT=5;

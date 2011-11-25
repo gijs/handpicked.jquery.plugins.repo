@@ -1,0 +1,217 @@
+<!doctype html>
+
+<html>
+    
+    <head>
+        
+        <title>sausage.js</title>
+        
+        <!-- apply CSS reset because we are not savages -->
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.1/build/reset/reset-min.css">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.1/build/reset-fonts/reset-fonts.css">
+        <link rel="stylesheet" type="text/css" href="../lib/sausage.css">
+        
+        <style type="text/css">
+            
+            body {
+                overflow-y: scroll;
+            }
+                #site {
+                    width: 500px;
+                    padding: 40px; margin: 0 auto;
+                }
+                    h1 {
+                        margin-bottom: 40px;
+                        font-size: 24px;
+                    }
+                    .page-set {
+                        
+                    }
+                        .page {
+                            padding: 20px; margin-bottom: 40px;
+                            background-color: #eee;
+                            -moz-border-radius: 20px;
+                            -webkit-border-bottom-left-radius: 20px;
+                            -webkit-border-top-left-radius: 20px;
+                            -webkit-border-bottom-right-radius: 20px;
+                            -webkit-border-top-right-radius: 20px;
+                        }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="site">
+            
+            <h1>My Infinite Scrolling Blog (500 draws: <span id="out"></span>)</h1>
+            
+            <ol class="page-set">
+                
+            </ol>
+            
+        </div>
+        
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="../lib/jquery.ui.widget.js"></script>
+        <script type="text/javascript" src="../jquery.sausage.js"></script>
+        
+        <script type="text/javascript">
+            
+            (function(){
+                
+                /*
+                    
+                    This first part is just throwaway code to simulate a lazy loaded page.
+                    
+                */
+                
+                var pages = [],
+                    ran = 5,
+                    $pages = $('.page-set'),
+                    i = 0,
+                    index = 0,
+                    loading = false;
+                
+                function addPage() {
+                    
+                    var h_page = (Math.floor((1000-499)*Math.random()) + 500)
+                    
+                    $pages
+                        .append('<li class="page" style="height:' + h_page + 'px;">Page ' + (index + 1) + '</li>')
+                        ;
+                    
+                    index ++;
+                };
+                
+                for (i = 0; i < ran; i++)
+                {
+                    addPage(i);
+                }
+                
+                $(window).scroll(function(){
+                    
+                    if (loading)
+                    {
+                        return;
+                    }
+                    
+                    if  ($(window).scrollTop() > $(document).height() - $(window).height() - 200)
+                    {
+                        loading = true;
+                        
+                        setTimeout(function(){
+                            
+                            addPage();
+
+                            $(window)
+                                .sausage('draw')
+                                ;
+                            
+                            loading = false;
+                            
+                        }, 250);
+                    }
+                    
+                });
+                
+                /*
+                    
+                    This is where the plugin is initialized.
+                    
+                */
+                
+                $(window)
+                    .sausage()
+                    ;
+                
+                function t() {  
+                    var time = new Date();  
+                    return time.getTime();  
+                }
+                
+                var s = t();   
+                
+                for (var i = 0; i < 50; i++)
+                {  
+                    $(window)
+                        .sausage('draw')
+                        ;
+                }
+                
+                $('#out').append((t() - s) + 'ms');
+                
+            }());
+            
+        </script>
+        
+    </body>
+    
+</html>

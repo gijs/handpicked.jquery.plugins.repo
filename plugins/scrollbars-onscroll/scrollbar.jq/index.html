@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Custom Scroller :: Examples</title>
+<link rel="stylesheet" href="customScroller.css" type="text/css">
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.customScroller-1.2.js"></script>
+<script type="text/javascript" src="jquery.mousewheel.js"></script>
+<script type="text/javascript" src="jquery.wresize.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#test-1").customScroller();
+});
+</script>
+<style>
+.code {
+	border: 1px solid #CC0000;
+	background: #FFFFCC;
+	padding: 10px;
+	width: 40%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#test-1 {
+	width: 350px;
+	height: 300px;
+	border: 1px solid #527fa2;
+}
+</style>
+</head>
+<body>
+<h3>Simple Example</h3>
+<p>Below a simple frame. Width and height are fix and speed is set as attribute.</p>
+<a href="#ancora" target="test-1">This is an anchor</a> | <a href="#ancora2" target="test-1">This is an other anchor</a>
+<div id="test-1" speed="4">
+  <p><a name="ancora3"></a><a href="#ancora2" target="test-1">This is an internal anchor</a></p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in   culpa qui officia deserunt mollit anim id est laborum.</p>
+  <form id="form1" name="form1" method="post" action="" style="margin: 0px; padding: 0px;">
+    <input type="text" name="textfield" id="textfield" />
+    <br />
+    <textarea name="textarea" id="textarea" style="width: 380px; height: 50px; margin: 0px; padding: 0px;"></textarea>
+    <br />
+    <input type="submit" name="button" id="button" value="Invia" />
+  </form>
+  <p><a href="http://www.google.it/#pippo" target="_blank">Google</a></p>
+  <p><a name="ancora"></a><strong>Lorem</strong> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in   culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in   culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p><a name="ancora2"></a><strong>Lorem</strong> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu   fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in   culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p><a href="#ancora3" target="test-1">Top</a></p>
+</div>
+<p><strong>Code</strong>: </p>
+<p class="code">&lt;link rel=&quot;stylesheet&quot; href=&quot;<strong>../css/customScroller.css</strong>&quot; type=&quot;text/css&quot;&gt;</p>
+<p class="code">&lt;style&gt;<br />
+  #test-1 {<br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 350px;</strong><br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 300px;</strong><br />
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>border: 1px solid #527fa2;<br />
+  }<br />
+  &lt;/style&gt;<br />
+</p>
+<p class="code">&lt;script src=&quot;<strong>../js/jquery-1.3.2.min.js</strong>&quot;&gt;&lt;/script&gt;<br />
+  &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>../js/jquery.customScroller.js</strong>&quot;&gt;&lt;/script&gt;<br />
+  &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>../js/jquery.mousewheel.js</strong>&quot;&gt;&lt;/script&gt;<br />
+  &lt;script type=&quot;text/javascript&quot; src=&quot;<strong>../js/jquery.wresize.js</strong>&quot;&gt;&lt;/script&gt;</p>
+<p class="code">&lt;script type=&quot;text/javascript&quot;&gt;<br />
+  <strong>$(function(){<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#test-1&quot;).customScroller();<br />
+  });</strong><br />
+  &lt;/script&gt;</p>
+<p class="code">&lt;div <strong>id=&quot;test-1&quot;</strong> <strong>speed=&quot;4&quot;</strong>&gt;<br />
+  &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+</p>
+</body>
+</html>

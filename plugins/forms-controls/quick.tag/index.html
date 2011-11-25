@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Quicktag</title>
+		<meta name="description" content="jQuery Quicktag - Quicktag is a tagging plugin for the jQuery JavaScript library. It allows the user the create and delete tags on the fly &amp; comes with many options to choose from." />
+		<meta name="author" content="Milos Sutanovac" />
+		<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link rel="shortcut icon" href="img/favicon.png" />
+		<link rel="image_src" href="img/fbpreview.jpg" />
+		<link rel="apple-touch-icon" href="img/iphone.jpg" />
+		<link rel="apple-touch-icon" sizes="72x72" href="img/ipad.jpg" />
+		<link rel="apple-touch-icon" sizes="114x114" href="img/iphone4.jpg" />
+		<link rel="stylesheet" href="css/master.css" />
+	</head>
+	<body>		
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#config">Config</a>
+					</li>
+					<li>
+						<a href="#settings">Settings</a>
+					</li>
+					<li>
+						<a href="#demo">Demo</a>
+					</li>
+					<li>
+						<a href="#download">Download</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="mainwrapp">
+			<section>
+				<div id="about" class="separator"></div>
+				<h1>jQuery Quicktag</h1>
+				<p class="last">
+						Quicktag is a tagging plugin for the <a href="http://jquery.com">jQuery</a> JavaScript library. What basically started as fun, ironically turned into a personal/college project, which then turned into a real plugin. You can find this plugin <a href="http://github.com/mixn/quicktag">over at GitHub</a>, where you'll be able to download its documentation, update to the newest version, or fork this project to make it better yourself. Thanks for stepping by!<br /><br />
+
+						You should follow me on twitter <a href="http://twitter.com/mixn" style="color: #ff0386;">here</a>.
+				</p>
+			</section>
+			<section>
+				<div id="config" class="separator"></div>
+				<h1>Configuration</h1>
+				<p>
+					The minimum amount of HTML is an <span class="bold">input field</span> and a <span class="bold">div or ul with id="taglist"</span>.<br/>The generated tags will be placed inside this, so called, taglist.
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">&#60;!-- Necessary HTML --&#62;</span>
+<span class="beige">&#60;input type=</span><span class="green">"text"</span> <span class="beige">id=</span><span class="green">"taginput"</span> <span class="beige">/&#62;</span>
+<span class="beige">&#60;ul id=<span class="green">"taglist"</span></span><span class="beige">&#62;&#60;/ul&#62;</span></code></pre>
+				</div>
+				<p>
+					The minimum amount of JavaScript is this little line here:
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">// Necessary JS</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag();</span></code></pre>
+				</div>
+				<p class="last">	
+					Wasn't that hard, was it? Let's take this a bit further.
+				</p>
+			</section>
+			<section>
+				<div id="settings" class="separator"></div>		
+				<h1>Settings</h1>
+				<p>
+					Quicktag comes with <span class="bold">many options to choose from</span> - a few of them might even go beyond the scope of this plugin. I'll try to explain everything as best as I can, but feel free to poke me on facebook if you have any questions... or just <a href="mailto:sutmil@gmail.com">send me an email</a>.
+				</p>
+				<p>
+					<span class="bold">allowedTags</span> | <span class="italic">expects: integer / default: 5</span><br />
+					This param sets the amount of tags the user is allowed to enter.
+				</p>			
+				<p>
+					<span class="bold">limitation</span> | <span class="italic">expects: integer / default: 30</span><br />
+					Limitation is the maximum length of every tag. In my opinion, this is a good thing to have, since it reduces spam + keeps things clean.
+				</p>
+				<p>
+					<span class="bold">counter</span> | <span class="italic">expects: object / default: undefined</span><br />
+					Ever since I started using twitter, I really liked the feedback I got while entering a tweet. If you want to let the user know how many characters he has left, do this:
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">&#60;!-- Simply create a div --&#62;</span>
+<span class="beige">&#60;div id=</span><span class="green">"counter"</span><span class="beige">&#62;&#60;/div&#62;</span><br />
+<span class="comment">// and pass it to Quicktag</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	counter	:</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#counter'</span><span class="white">)
+});</span></code></pre>
+				</div>
+				<p>
+					<span class="bold">notice</span> | <span class="italic">expects: object / undefined</span><br />
+					Displaying messages is pretty much the same as above - just add a div and let Quicktag know about it. The only difference is that this div will be hidden first &amp; only displayed once there are 'no more tags to give' *<span class="italic">playslovesong</span>*.
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">// Create a div and write whatever you want</span>
+<span class="beige">&#60;div id=</span><span class="green">"notice"</span><span class="beige">&#62;</span><span class="white">Sorry, only 10 tags are allowed.</span><span class="beige">&#60;/div&#62;</span><br />
+<span class="comment">// pass it to Quicktag</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	notice 		:</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#notice'</span><span class="white">),
+	allowedTags	:</span> <span class="red">10</span><span class="white">,
+});</span></code></pre>
+				</div>
+				<p>
+					<span class="bold">fade</span> | <span class="italic">expects: integer / default: false</span><br />
+					fade expects an integer (milliseconds) - when set, the error/notice won't just show up, it'll fade in instead.
+				</p>
+				<p>
+					<span class="bold">focus</span> | <span class="italic">expects: boolean / default: false</span><br />
+					Quicktag automatically refocuses the input field once you've deleted a tag, making it a lot quicker to use. If you don't like this, simply set it to false.
+				</p>			
+				<p>
+					<span class="bold">triggerKey</span> | <span class="italic">expects: integer / default: 13 (Enter)</span><br />
+					triggerKey expects the keycode of the key that should add each tag. Default is the Enter key (13) and personally, I'd never change it. Here's still <a href="http://www.cambiaresearch.com/c4/702b8cd1-e5b0-42e6-83ac-25f0306e3e25/Javascript-Char-Codes-Key-Codes.aspx">a list with all keycodes</a>.
+				</p>
+				<p>
+					<span class="bold">img</span> | <span class="italic">expects: string / default: undefined</span><br />
+					Not liking the little 'x'? Too boring? Simply replace it with an image:
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">// Quicktag will no use delete_icon.png instead of an 'x'</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	img :</span> <span class="green">'pathtoimage/delete_icon.png'</span>
+<span class="white">});</span></code></pre>
+				</div>
+				<p>
+					<span class="bold">coloring</span> | <span class="italic">expects: boolean / default: false</span><br />
+					This one is also inspired by twitter. Setting coloring to true will apply colors at 'critical spots'. The default colors are yellow, orange, and red. As mentioned before, the default limitation is 50 - so if coloring is set to true, yellow will be applied at 25, orange at 15, and red at 10. This, of course, depends on the limitation - the 'color spots' are dynamically generated and depend on both the limitation and how many colors are passed inside the object.
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">// This will 'warn' the user at 50, 25, 15
+// using the default colors yellow, orange, red</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	coloring :</span> <span class="red">true</span>
+<span class="white">});</span></code></pre>
+				</div>
+				<p>
+					<span class="bold">colors</span> | <span class="italic">expects: array / default: ['yellow', 'orange', 'red']</span><br />
+					Here you'll be able to specify the colors you want Quicktag to be using. You could (hypothetically) pass as many colors as you want, just make sure it makes sense. How to find out whether or not passing many colors makes sense? Just do some quick math.<br />
+
+					Let's say you have 6 colors and the limitation is 100 chars. Every color will be applied at the half of the limitations half (example follows, don't worry):			
+				</p>
+				<div class="code">
+	<pre><code><span class="white">100 / 2 = 50</span> 				<span class="comment">// 1st color at 50 chars left</span>
+<span class="white">50 / 2	= 25</span> 				<span class="comment">// 2nd color at 25 chars left</span>
+<span class="white">25 / 2  = 12.5 	(rounds to 15);</span>		<span class="comment">// 3rd color at 15 chars left</span>
+<span class="white">15 / 2  = 7.5	(rounds to 10);</span>		<span class="comment">// 4th color at 10 chars left</span>
+<span class="white">10 / 2 	= 5</span> 				<span class="comment">// 5th color at 5  chars left</span>
+<span class="white">5 / 2	= 2.5	(rounds to 5!)</span> 		<span class="comment">// 5th color again &amp; forever</span>
+<span class="white">5 / 2	= 2.5	(rounds to 5!)</span> 		<span class="comment">// 5th color again &amp; forever</span>
+<span class="white">5 / 2	= 2.5	(rounds to 5!)</span> 		<span class="comment">// 5th color again &amp; forever</span>
+<span class="white">...</span></code></pre>
+				</div>
+				<p>This means, passing more than 5 colors using a limitation of 100 chars wouldn't make sense - the last color would never be visible. I hope that made sense.<br /><br />
+
+				Colors need to be passed as an array, the first color is the 'least risky' one - the last one is the 'riskiest'. An example:
+				<div class="code">
+					<pre><code><span class="comment">// Set limitation to 100 chars, enable coloring
+// and pass dark yellow, dark orange, bright red &amp; dark red</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	limitation 	:</span> <span class="red">100</span><span class="white">,
+	coloring 	:</span> <span class="red">true</span><span class="white">,
+	colors		:</span> <span class="white">[</span><span class="green">'#ffeb2f'</span><span class="white">,</span> <span class="green">'#ff8236'</span><span class="white">,</span> <span class="green">'#ff4120'</span><span class="white">,</span> <span class="green">'#cc341a'</span><span class="white">]
+});</span></code></pre>
+				</div>
+				</p>
+				<p>
+					<span class="bold">isForm</span> | <span class="italic">expects: object / default: undefined</span><br />
+					If your input field is anywhere inside a &#60;form&#62; tag, hitting Enter (which is the default triggerKey) will automatically submit the form. To prevent this behaviour, you have to set the isForm parameter.
+				</p>
+				<div class="code">
+					<pre><code><span class="comment">// Your form</span>
+<span class="beige">&#60;form action=</span><span class="green">"nextpage.php"</span> <span class="beige">id=</span><span class="green">"myform"</span><span class="beige">&#62;</span>
+	<span class="comment">// Here's the input field that uses Quicktag</span>
+	<span class="beige">&#60;input id=</span><span class="green">"taginput"</span> <span class="beige">/&#62;
+&#60;/form&#62;</span>
+
+<span class="comment">// Pass the form to Quicktag so the Enter key doesn't submit the form</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	isForm :</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#myform'</span><span class="white">)
+});</span></code></pre>
+				</div>
+				<p>
+					<span class="bold">tagClass</span> | <span class="italic">expects: string / default: 'tag'</span><br />
+					Every tag comes with CSS class of 'tag'. This makes styling tags a lot easier. 
+				</p>
+				<p class="last">
+					<span class="bold">closeClass</span> | <span class="italic">expects: string / default: 'close'</span><br />
+					Same as tagClass, just for the little 'x' / image.
+				</p>
+			</section>
+			<section>
+				<div id="demo" class="separator"></div>
+				<h1>Demos</h1>
+				<p>
+					This demo allows only three tags with a max. of 50 characters each, has a counter &amp; coloring (with 4 custom colors) enabled, uses image replacement for the close-link, has an error message that fades in and refocuses the input field. <span class="bold">Type - when done, hit Enter</span>.
+				</p>
+				<div class="example">
+					<form action="danke.html" id="myform" method="post">
+						<input type="text" value="" id="example2" />
+						<div id="counter">
+
+						</div>
+						<div class="clear"></div>
+					</form>				
+					<ul id="taglist2">
+
+					</ul>
+					<div class="clear"></div>
+					<div id="notice2">
+						Sorry, you've reached the maximum amount of tags.
+					</div>				
+				</div>
+				<div class="clear"></div>
+				<p>
+					Here's the code used in this demo, both HTML and JS:
+				</p>
+				<div class="code last">
+					<pre><code><span class="comment">&#60;!-- HTML --&#62;</span>
+<span class="beige">&#60;form action=</span><span class="green">"nextpage.php"</span> <span class="beige">id=</span><span class="green">"myform"</span><span class="beige">&#62;</span>
+	<span class="beige">&#60;input type=</span><span class="green">"text"</span> <span class="beige">id=</span><span class="green">"taginput"</span> <span class="beige">/&#62;</span>
+	<span class="beige">&#60;div id=</span><span class="green">"notice"</span><span class="beige">&#62;</span><span class="white">Error message goes here.</span><span class="beige">&#60;/div&#62;</span>
+	<span class="beige">&#60;div id=</span><span class="green">"counter"</span><span class="beige">&#62;&#60;/div&#62;</span>
+<span class="beige">&#60;/form&#62;</span>
+
+<span class="comment">// JS</span>
+<span class="beige">$</span><span class="white">(</span><span class="green">'#taginput'</span><span class="white">).quickTag({
+	allowedTags	:</span> <span class="red">3</span><span class="white">,
+	limitation 	:</span> <span class="red">50</span><span class="white">,
+	coloring 	:</span> <span class="red">true</span><span class="white">,
+	colors		:</span> <span class="white">[</span><span class="green">'#ffb4db'</span><span class="white">,</span> <span class="green">'#ff8ac7'</span><span class="white">,</span> <span class="green">'#ff62b3'</span><span class="white">,</span> <span class="green">'#ff0386'</span><span class="white">],
+	img		:</span> <span class="green">'img/close.png'</span><span class="white">,
+	fade		:</span> <span class="red">300</span><span class="white">,
+	focus		:</span> <span class="red">true</span><span class="white">,
+	notice		:</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#notice'</span><span class="white">),
+	counter		:</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#counter'</span><span class="white">),
+	isForm		:</span> <span class="beige">$</span><span class="white">(</span><span class="green">'#myform'</span><span class="white">)
+});</span></code></pre>
+				</div>
+			</section>
+			<section>
+				<div id="download" class="separator"></div>
+				<h1>Downloads</h1>
+				<ol>
+					<li>
+						<p>
+							<a href="#">Minified Version</a><br />
+							(production purposes)							
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="#">Regular Version</a><br />
+							(development purposes)
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="#">Documentation</a><br />
+							(both versions &amp; doc)
+						</p>
+					</li>
+				</ol>
+				<div class="clear"></div>
+			</section>
+		</div>
+		<div class="clear"></div>
+		<footer>
+			<div>
+				<a class="active" href="http://twitter.com/mixn">
+					<img src="img/t_icon.png" alt="Twitter Icon" />
+				</a>
+			</div>
+		</footer>		
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+		<script src="js/jquery.quicktag.min.js"></script>
+		<script src="js/master.js"></script>		
+	</body>
+</html>

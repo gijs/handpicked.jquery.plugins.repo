@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Changing To Fixed Position When Window Scrolls</title>
+	<style type="text/css">
+ 
+		body {
+			margin: 0px 0px 0px 0px ;
+			padding: 0px 0px 0px 0px ;
+			}
+ 
+		#site-title {
+			margin: 0px 0px 0px 0px ;
+			padding: 10px 20px 10px 20px ;
+			}
+ 
+		#site-message {
+			background-color: #F0F0F0 ;
+			width: 100% ;
+			}
+ 
+		#site-message span {
+			display: block ;
+			padding: 10px 20px 10px 20px ;
+			}
+ 
+		div.site-message-fixed {
+			border-bottom: 1px solid #E0E0E0 ;
+			left: 0px ;
+			position: fixed ;
+			top: 0px ;
+			}
+ 
+		#site-body {
+			padding: 20px 20px 500px 20px ;
+			}
+ 
+	</style>
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+	<script type="text/javascript">
+ 
+		// When the DOM is ready, initialize the scripts.
+		jQuery(function( $ ){
+ 
+			// Get a reference to the placeholder. This element
+			// will take up visual space when the message is
+			// moved into a fixed position.
+			var placeholder = $( "#site-message-placeholder" );
+ 
+			// Get a reference to the message whose position
+			// we want to "fix" on window-scroll.
+			var message = $( "#site-message" );
+ 
+			// Get a reference to the window object; we will use
+			// this several time, so cache the jQuery wrapper.
+			var view = $( window );
+ 
+ 
+			// Bind to the window scroll and resize events.
+			// Remember, resizing can also change the scroll
+			// of the page.
+			view.bind(
+				"scroll resize",
+				function(){
+					// Get the current offset of the placeholder.
+					// Since the message might be in fixed
+					// position, it is the plcaeholder that will
+					// give us reliable offsets.
+					var placeholderTop = placeholder.offset().top;
+ 
+					// Get the current scroll of the window.
+					var viewTop = view.scrollTop();
+ 
+					// Check to see if the view had scroll down
+					// past the top of the placeholder AND that
+					// the message is not yet fixed.
+					if (
+						(viewTop > placeholderTop) &&
+						!message.is( ".site-message-fixed" )
+						){
+ 
+						// The message needs to be fixed. Before
+						// we change its positon, we need to re-
+						// adjust the placeholder height to keep
+						// the same space as the message.
+						//
+						// NOTE: All we're doing here is going
+						// from auto height to explicit height.
+						placeholder.height(
+							placeholder.height()
+						);
+ 
+						// Make the message fixed.
+						message.addClass( "site-message-fixed" );
+ 
+					// Check to see if the view has scroll back up
+					// above the message AND that the message is
+					// currently fixed.
+					} else if (
+						(viewTop <= placeholderTop) &&
+						message.is( ".site-message-fixed" )
+						){
+ 
+						// Make the placeholder height auto again.
+						placeholder.css( "height", "auto" );
+ 
+						// Remove the fixed position class on the
+						// message. This will pop it back into its
+						// static position.
+						message.removeClass( "site-message-fixed" );
+ 
+					}
+				}
+			);
+ 
+		});
+ 
+	</script>
+</head>
+<body>
+ 
+	<div id="site-header">
+ 
+		<h1 id="site-title">
+			Changing To Fixed Position When Window Scrolls
+		</h1>
+ 
+		<!--
+			The placeholder will keep the visual space of the
+			message taken up when the message is placed in a
+			fixed position. This will prevent the content from
+			sliding up.
+		-->
+		<div id="site-message-placeholder">
+ 
+			<div id="site-message">
+				<span>
+					Welcome to my website! Thanks for visiting!
+				</span>
+			</div>
+ 
+		</div>
+ 
+	</div>
+ 
+	<div id="site-body">
+ 
+		<!--
+			I'm using Javascript here just to fill up the
+			page with content so that the page will scroll
+			when I demo it.
+		-->
+		<script type="text/javascript">
+ 
+			for (var i = 0 ; ++i < 200 ;){
+ 
+				document.write(
+					"<p>" +
+						"Here is some content to help make sure" +
+						"the page will scroll a bit for the" +
+						"demonstration video." +
+					"</p>"
+				);
+ 
+			}
+ 
+		</script>
+ 
+	</div>
+ 
+</body>
+</html>

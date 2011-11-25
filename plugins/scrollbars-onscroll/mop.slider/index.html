@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Description" content="MopStudio,Miura Hiroki,Jquery,MopSlider" />
+<meta name="Keywords" content="MopStudio,Miura Hiroki,Jquery,MopSlider" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<style type="text/css">
+<!--
+#demo {
+	height: 100%;
+	width: 100%;
+}
+#demo #sliderDemo1 {
+	height: 200px;
+	width: 700px;
+	margin: 0 auto 0 auto;
+}
+#demo #sliderDemo2 {
+	height: 200px;
+	width: 600px;
+	margin: 0 auto 0 auto;
+}
+#demo #sliderDemo3 {
+	height: 100px;
+	width: 400px;
+	margin: 0 auto 0 auto;
+}
+#demo #sliderDemo4 {
+	height: 100px;
+	width: 400px;
+	margin: 0 auto 0 auto;
+}
+#demo #sliderDemo5 {
+	height: 100px;
+	width: 400px;
+	margin: 0 auto 0 auto;
+}
+#demo #slider1 {
+	height: 200px;
+	display: none;
+}
+#demo #slider2 {
+	display: none;
+	height: 200px;
+}
+#demo #slider3 {
+	display: none;
+	height: 100px;
+}
+#demo #slider4 {
+	display: none;
+	height: 100px;
+}
+#demo #slider5 {
+	display: none;
+	height: 100px;
+}
+* html #demo .itemDiv1 {
+	display:inline;
+}
+#demo .itemDiv1 {
+	height: 120px;
+	width: 120px;
+	background-color: #FFFFFF;
+}
+* html #demo .itemDiv2 {
+	display:inline;
+}
+#demo .itemDiv2 {
+	height: 120px;
+	width: 150px;
+	background-color: #FFFFFF;
+}
+* html #demo .itemDiv3 {
+	display:inline;
+}
+#demo .itemDiv3 {
+	height: 50px;
+	width: 580px;
+}
+* html #demo .itemDiv4 {
+	display:inline;
+}
+#demo .itemDiv4 {
+	height: 50px;
+	width: 80px;
+	background-color: #95d200;
+	margin-right:20px;
+	float:left;
+}
+* html #demo .itemDiv4_2 {
+	display:inline;
+}
+#demo .itemDiv4_2 {
+	height: 50px;
+	width: 80px;
+	background-color: #95d200;
+	float:left;
+}
+* html #demo .itemDiv5 {
+	display:inline;
+}
+#demo .itemDiv5 {
+	height: 50px;
+	width: 360px;
+	background-color: #95d200;
+}
+* html #demo .itemDiv6 {
+	display:inline;
+}
+#demo .itemDiv6 {
+	height: 50px;
+	width: 80px;
+	background-color: #95d200;
+}
+* html #demo .flashCase1 {
+	display:inline;
+}
+#demo .flashCase1 {
+	height: 140px;
+	width: 140px;
+}
+* html #demo .flashCase2 {
+	display:inline;
+}
+#demo .flashCase2 {
+	height: 140px;
+	width: 140px;
+}
+#demo .expl {
+	width: 500px;
+	background-color: #F8F8F2;
+	margin: 0 auto 0 auto;
+}
+#demo .slddiscrip {
+	width: 680px;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+}
+
+-->
+</style>
+<!--jquerySet start-->
+<script type="text/javascript" src="jquery.min.js" ></script>
+<script type="text/javascript" src="jquery.pngFix-1.2.js"></script>
+<script type="text/javascript" src="jquery.ui.core-1.8.js"></script>
+<script type="text/javascript" src="jquery.ui.widget-1.8.js"></script>
+<script type="text/javascript" src="jquery.ui.mouse-1.8.js"></script>
+<script type="text/javascript" src="jquery.ui.position-1.8.js"></script>
+<script type="text/javascript" src="jquery.ui.draggable-1.8.js"></script>
+<!--jquerySet end-->
+<script type="text/javascript" src="mopSlider-2.5.js"></script>
+<script type="text/javascript" src="font.js"></script>
+<script type="text/javascript" src="copy.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$("#slider1").mopSlider({'w':700,'h':172,'sldW':500,'btnW':200,'itemMgn':30,'indi':"MopSlider 2.5",'shuffle':'y','auto':'n','move':1000,'interval':2000,'type':'paper'});
+$("#slider2").mopSlider({'w':600,'h':172,'sldW':400,'btnW':150,'itemMgn':25,'indi':"Any Words",'shuffle':'y','auto':'y','move':800,'interval':1500,'type':'black'});
+$("#slider3").mopSlider({'w':400,'h':72,'sldW':300,'btnW':100,'itemMgn':20,'indi':"Words",'shuffle':'y','auto':'y','move':1500,'interval':1500,'type':'paper'});
+$("#slider4").mopSlider({'w':400,'h':72,'sldW':300,'btnW':100,'itemMgn':20,'indi':"Words",'shuffle':'y','auto':'yn','move':1500,'interval':1500,'type':'black'});
+$("#slider5").mopSlider({'w':420,'h':72,'sldW':380,'btnW':100,'itemMgn':20,'indi':"Words",'shuffle':'y','auto':'nn','type':'paper'});
+
+
+$(".flashCase1").html('<object data="demo/demo1.swf" type="application/x-shockwave-flash" width="140" height="140" id="demo1" align="middle">'+
+  '<param name="allowScriptAccess" value="sameDomain" />'+
+  '<param name="allowFullScreen" value="false" />'+
+  '<param name="movie" value="demo/demo1.swf" />'+
+  '<param name="quality" value="high" />'+
+  '<param name="wmode" value="transparent" />'+
+'</object>');
+$(".flashCase2").html('<object data="demo/demo1.swf" type="application/x-shockwave-flash" width="140" height="140" id="demo2" align="middle">'+
+  '<param name="allowScriptAccess" value="sameDomain" />'+
+  '<param name="allowFullScreen" value="false" />'+
+  '<param name="movie" value="demo/demo1.swf" />'+
+  '<param name="quality" value="high" />'+
+  '<param name="wmode" value="transparent" />'+
+'</object>');
+
+});
+</script>
+<title>Jquery Plugin MopSlider 2.5 demo</title>
+
+</head>
+<body>
+<div id="demo">
+  <!--start explanation-->
+  <div class="space20"></div>
+  <div class="expl contentCenter">
+    <div class="space10"></div>
+    <div class="contentCenter pad10_0_10_0 bold">MopSlider 2.5 Demo</div>
+    <div class="normalF gray"> | <a class="navi eng" href="mopSlider2descrip.html">document</a> | </div>
+    <div class="space20"></div>
+  </div>
+  <div class="space20"></div>
+  <!--start slider-->
+  <div id="sliderDemo1">
+    <div id="slider1"> <img src="demo/img_demo/jpg1-1.jpg" width="136" height="74" /> <img src="demo/img_demo/jpg1-2.jpg" width="74" height="136" /> <img src="demo/img_demo/jpg1-3.jpg" width="84" height="94" /> <img src="demo/img_demo/jpg1-4.jpg" width="92" height="88" />
+      <div class="itemDiv1">
+        <div class="gray normalF eng lineH13 pad5 overHide"> <img class="f_left" src="demo/img_demo/jpg4.jpg" width="62" height="66" /> image + text in div, image + text in div, image + text in div </div>
+      </div>
+      <div class="itemDiv1">
+        <div class="gray normalF lineH13 pad5 overHide">
+          <div class="pngT"><img class="f_right" src="demo/img_demo/png5.png" width="66" height="62" /></div>
+          image + text in div, image + text in div, image + text in div </div>
+      </div>
+      <img class="pngT" src="demo/img_demo/png1.png" width="136" height="74" /> <img src="demo/img_demo/png2.png" width="74" height="136" /> <img class="pngT" src="demo/img_demo/png3.png" width="84" height="94" /> <img class="pngT" src="demo/img_demo/png4.png" width="92" height="88" /> <img class="pngT" src="demo/img_demo/png3.png" width="84" height="94" /> <img class="pngT" src="demo/img_demo/png4.png" width="92" height="88" /> </div>
+  </div>
+  <!--end slider-->
+  <div class="slddiscrip f12 lineH15">$(&quot;#slider1&quot;).mopSlider({'w':700, 'h':172, 'sldW':500, 'btnW':200, 'itemMgn':30, 'indi':&quot;MopSlider 2.5&quot;, 'shuffle':'y', 'auto':'n', 'move':1000, 'interval':2000, 'type':'paper'});</div>
+  <div class="space30"></div>
+  <!--start slider-->
+  <div id="sliderDemo2">
+    <div id="slider2">
+      <img src="demo/img_demo/jpg2-1.jpg" width="136" height="74" />
+      <img src="demo/img_demo/jpg2-2.jpg" width="74" height="136" />
+      <img src="demo/img_demo/jpg2-3.jpg" width="84" height="94" />
+      <img src="demo/img_demo/jpg2-4.jpg" width="92" height="88" />
+      <div class="itemDiv1">
+        <div class="gray normalF eng lineH13 pad5 overHide"> <img class="f_left" src="demo/img_demo/jpg4.jpg" width="62" height="66" /> image + text in div, image + text in div, image + text in div </div>
+      </div>
+      <div class="itemDiv1">
+        <div class="gray normalF lineH13 pad5 overHide"> <img class="f_right" src="demo/img_demo/png5.png" width="66" height="62" /> image + text in div, image + text in div, image + text in div </div>
+      </div>
+      <img src="demo/img_demo/png1.png" width="136" height="74" />
+      <img src="demo/img_demo/png2.png" width="74" height="136" />
+      <img src="demo/img_demo/png3.png" width="84" height="94" />
+      <img src="demo/img_demo/png4.png" width="92" height="88" />
+      <div class="flashCase1"></div>
+      <div class="flashCase2"></div>
+    </div>
+  </div>
+  <!--end slider-->
+  <div class="slddiscrip f12 lineH15"> $(&quot;#slider2&quot;).mopSlider({'w':600, 'h':172, 'sldW':400, 'btnW':150, 'itemMgn':25, 'indi':&quot;Any Words&quot;, 'shuffle':'y', 'auto':'y', 'move':800, 'interval':1500, 'type':'black'});</div>
+  <div class="space30"></div>
+  <div id="sliderDemo3">
+    <div id="slider3">
+      <div class="itemDiv3">
+        <div class="itemDiv4"></div>
+        <div class="itemDiv4"></div>
+        <div class="itemDiv4"></div>
+        <div class="itemDiv4"></div>
+        <div class="itemDiv4"></div>
+        <div class="itemDiv4_2"></div>
+      </div>
+    </div>
+  </div>
+    <!--end slider-->
+  <div class="slddiscrip f12 lineH15"> $(&quot;#slider3&quot;).mopSlider({'w':400, 'h':72, 'sldW':300, 'btnW':100, 'itemMgn':20, 'indi':&quot;Words&quot;, 'shuffle':'y', 'auto':'y', 'move':1500, 'interval':1500, 'type':'paper'});</div>
+   <div class="space30"></div>
+  <div id="sliderDemo4">
+    <div id="slider4">
+      <div class="itemDiv5"></div>
+      <div class="itemDiv5"></div>
+      <div class="itemDiv5"></div>
+    </div>
+  </div>
+    <!--end slider-->
+  <div class="slddiscrip f12 lineH15"> $(&quot;#slider4&quot;).mopSlider({'w':400, 'h':72, 'sldW':300, 'btnW':100, 'itemMgn':20, 'indi':&quot;Words&quot;, 'shuffle':'y', 'auto':'yn', 'move':1500, 'interval':1500, 'type':'black'});</div>
+    <div class="space30"></div>
+  <div id="sliderDemo5">
+    <div id="slider5">
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+      <div class="itemDiv6"></div>
+    </div>
+  </div>
+    <!--end slider-->
+  <div class="slddiscrip f12 lineH15"> $(&quot;#slider5&quot;).mopSlider({'w':420, 'h':72, 'sldW':380, 'btnW':100, 'itemMgn':20, 'indi':&quot;Words&quot;, 'shuffle':'y', 'auto':'nn', 'type':'paper'});</div>
+</div>
+<div class="mopCheck contentCenter"></div>
+<div id="footerBox" class="normalF gray">
+  <div id="mailto"><a class="navi eng" href="mailto:info@mopstudio.jp">info@mopstudio.jp</a></div>
+  <div id="url"><a class="navi smallF eng" href="http://www.mopstudio.jp">www.mopstudio.jp</a></div>
+  <div id="copyright">Copyright</div>
+  <div class="space10"></div>
+ </div>
+
+</body>
+</html>
