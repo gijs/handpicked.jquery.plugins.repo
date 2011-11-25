@@ -1,0 +1,249 @@
+<!doctype>
+<html>
+	<head>
+		<title>Flip! A jQuery plugin v0.9.9</title>
+		<meta name="description" content="Flip is a jQuery plugin to apply flip animation to any element."/>
+		<meta name="keywords" content="flip, flipping, jquery, jquery plugin, plugin, animation plugin, javascript, css, border animation"/>
+		<meta name="language" content="english"/>
+		<meta name="robots" content="index,follow"/>
+		<meta name="author" content="Luca Manno"/>
+
+		<meta name="charset" content="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="reset_html5.css"/>
+		<link rel="stylesheet" type="text/css" href="flip_099.css"/>
+
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+		<script src="jquery-ui-1.7.2.custom.min.js"></script>
+		<script src="jquery.flip.js"></script>
+
+		<script type="text/javascript">
+			$(function(){
+				
+				$("#flipPad a:not(.revert)").bind("click",function(){
+					var $this = $(this);
+					$("#flipbox").flip({
+						direction: $this.attr("rel"),
+						color: $this.attr("rev"),
+						content: $this.attr("title"),//(new Date()).getTime(),
+						onBefore: function(){$(".revert").show()}
+					})
+					return false;
+				});
+				
+				$(".revert").bind("click",function(){
+					$("#flipbox").revertFlip();
+					return false;
+				});
+				
+				var changeMailTo = function(){
+					var mArr = ["@","smashup","luca",".it"];
+					$("#email").attr("href","mailto:"+mArr[2]+mArr[0]+mArr[1]+mArr[3]);
+				}
+				
+				$(".downloadBtn").click(function(){
+					pageTracker._trackPageview('download_flip');
+				});	
+				
+				setTimeout(changeMailTo,500);
+				
+			});
+		</script>					
+	</head>
+	<body>
+	
+		<section class="container">
+			<header>
+				Flip!<span class="subtitle">a jquery plugin <span class="version">v 0.9.9</span></span>
+				<div class="aboutMe">by <a href="http://i.smashup.it" title="Luca Manno, UI front-end developer">Luca Manno</a>. Feel free to contact me: on Twitter <a href="http://www.twitter.com/roncioso" title="Luca Manno on twitter">@roncioso</a> or by <a id="email" href="mailto:spammer@spam.com">email</a></div>
+
+			</header>
+			<div class="clearfix">
+				<article class="main">
+					
+					<h3>
+						What is Flip?
+					</h3>
+					<p>
+						<strong>Flip</strong> is a <a href="http://www.jquery.com" title="jQuery">jQuery</a> plugin that will flip easily your elements in four directions. Try it
+					</p>
+
+					
+					<div id="flipbox">Hello! I'm a flip-box! :)</div>
+					<div id="flipPad">
+						<a href="#" class="left" rel="rl" rev="#39AB3E" title="Change content as <em>you</em> like!">left</a>
+						<a href="#" class="top" rel="bt" rev="#B0EB17" title="Ohhh yeah!">top</a>
+						<a href="#" class="bottom" rel="tb" rev="#82BD2E" title="Hey oh let's go!">bottom</a>
+						<a href="#" class="right" rel="lr" rev="#C8D97E" title="Waiting for css3...">right</a>
+
+						<a href="#" class="revert">revert!</a>
+					</div>					
+
+					<div class="usage">
+						<h3>How to use?</h3>
+						<p>
+							Like every jquery plugin, just chain it:
+<pre style="font-size:12px;line-height:18px;margin-left:20px;">$("#flipbox").flip({
+	direction:'tb'
+})</pre>							
+						</p>
+						<h3>How to change content?</h3>
+
+						<p>
+							Add <strong style="font-family:monospace">content</strong> params in this way:
+<pre style="font-size:12px;line-height:18px;margin-left:20px;">$("#flipbox").flip({
+	direction:'tb',
+	<strong>content:</strong>'this is my new content'
+})</pre>
+						</p>
+						<h3>How to add callbacks?</h3>
+						<p>
+
+							There are three available callbacks: <strong>onBefore</strong>, <strong>onAnimation</strong>, <strong>onEnd</strong>
+<pre style="font-size:12px;line-height:18px;margin-left:20px;">$("#flipbox").flip({
+	direction:'tb',
+	onBefore: function(){
+			console.log('before starting the animation');
+	},
+	onAnimation: function(){
+			console.log('in the middle of the animation');
+	},
+	onEnd: function(){
+			console.log('when the animation has already ended');
+	}
+})</pre>
+						</p>
+						<h3>How to revert a flip?</h3>
+						<p>
+
+							There's an "hidden" method called <strong>revertFlip</strong>: as it says, revert a flip to the previous state
+<pre style="font-size:12px;line-height:18px;margin-left:20px;">$("#flipbox").revertFlip()</pre>
+						</p>						
+						<h3>All options</h3>
+						<p>
+							Here are all options available:
+							<ul class="options">
+								<li><strong>content</strong>define the new content of the flipped box. It works with: html, text or a jQuery object ex:$("selector")</li>
+
+								<li><strong>direction</strong>the direction where to flip. Possible values: 'tb', 'bt', 'lr', 'rl' (default:'tb')</li>
+								<li><strong>color</strong>Flip element ending background color</li>
+								<li><strong>speed</strong>Speed of the two parts of the animation</li>
+								<li><strong>onBefore</strong>Synchronous function excuted before the animation starts</li>
+								<li><strong>onAnimation</strong>Synchronous function excuted at half animation</li>
+
+								<li><strong>onEnd</strong>Synchronous function excuted after animation's end</li>
+							</ul>
+						</p>						
+					</div>
+
+				</article>
+				<aside>
+					<a href="http://github.com/roncioso/Flip-jQuery/tarball/master" class="downloadBtn">Download Now</a>
+
+					<span class="downloadGithub">or <a href="http://github.com/roncioso/Flip-jQuery">fork</a> it on github!</span>
+					
+					<h3>Depends on:</h3>
+					<ul id="dependencies">
+						<li><a href="http://www.jquery.com" title="jQuery javascript framework">jQuery</a> (of course!) (tested on 1.3.2)</li>
+						<li><a href="http://www.jqueryui.com" title="jQueryUI - User Interface for jQuery">jQueryUI</a> - core + effects core</li>
+
+					</ul>
+
+					<h3>Compatibility:</h3>
+					<div id="compat">Flip is compatible with:<br/>Firefox, Chrome/Chromium, Opera, Safari and even IE (6,7,8)</div>
+
+					<h3>License:</h3>
+					<div id="license"><strong>MIT/GPL</strong> license</div>
+
+					<h3>Thanks to:</h3>
+					<div id="thanksTo"><a href="http://www.nicolarizzo.com" title="Nicola Rizzo, Dojo committer">Nic Rizzo</a> for the <a href="http://archive.dojotoolkit.org/nightly/dojotoolkit/dojox/fx/tests/test_flip.html">original</a> idea, <a href="http://semicolonreport.blogspot.com/" title="Henrik Hjelte's blog">Henrik Hjelte</a>, <span class="others">Peter Sewert</span>, <a href="http://www.developersfactory.com.ar" title="Luciano Longo aka xNephilimx">xNephilimx</a> <span>and many others!</span></div>
+
+					<h3>Notes:</h3>
+					<ul id="notes">
+						<li>The font used in this page is <a href="http://www.theleagueofmoveabletype.com/fonts/4-chunk">Chunk</a>, made by <a href="http://www.meredithmandel.com">Meredith Mandel</a> available at <a href="http://www.theleagueofmoveabletype.com">The league of movable type</a>.<br/>Webfont-kit provided by <a href="http://www.fontsquirrel.com/">Font Squirrel</a></li>
+
+						<li>This page is using Remy Sharp's <a href="http://code.google.com/p/html5shiv/">HTML5 shiv</a> to enable HTML5 elements on IE</li>
+					</ul>
+				</aside>
+			</div>
+			<footer>
+				Hey! oh! Let's go!
+			</footer>
+
+		</section>
+		<a class="tweetThis" href="http://twitter.com/home?status=Flip!%20A%20(flipping)%20jQuery%20plugin%20http%3A%2F%2Fbit.ly%2F1mgCX7"><img src="/lab/flip/img/tweet.png"/><span>Tweet this!</span></a>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-181608-11");
+		pageTracker._trackPageview();
+		</script>		
+	</body>
+</html>

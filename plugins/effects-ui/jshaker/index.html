@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jShaker jQuery Plug-in Demo</title>
+
+<link rel="stylesheet" type="text/css" href="./main.css" />
+
+
+
+
+
+
+<!--
+
+http://iwantaneff.in/repo/
+
+
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                               .g`                              
+                                               j#                               
+                                  f           ]0#                               
+                                ,&            M0#                               
+                               ]0             00#                               
+                               00             00#                               
+                ,             #00             000f                              
+              y#             ]000             0000                              
+             _0^             0000             M0000                             
+            p00              0000              0000&_                           
+           j00f             _0000              400000g                          
+          _000f             00000_              M00000&_                        
+         .0000f             000008               ]000000gq                p     
+         ]0000f             M00000f               `M000000NN,,         ,j0!     
+         00000f              00000M                 *M00000000MMMMMMMMM0M`      
+         00000f              000000#                  ]@00000000000000M         
+        000000f              ]000000I                     !@FM00@M@F            
+        000000f              ~0000000g                                          
+        0000000               #00000008                                         
+        0000000                00000000&                                        
+        0000000#                #00000000,                                   +  
+        00000000r               ^000000000pg                               _pf  
+        000000001                ~0000000000&g_                          _j0^   
+        ~00000000_                `R0000000000&g_                      _j00~    
+         000000000,                 ~000000000000Ngg_,             __jg000!     
+         400000000&                  `M000000000000000MM&,,,,,,,jNN00000M`      
+         *000000000M                   `#00000000000000000000000000000M`        
+          0000000000#,                    "M000000000000000000000000M!          
+           00000000000                       !@Q0000000000000000@@!             
+           ]00000000000,                         `MMFMMFMMFMMF'                 
+            #00000000000L                                                       
+             000000000000#,                                                     
+              0000000000000p                                               y    
+              `00000000000000N_                                          _p     
+                000000000000000g__                                     _j0f     
+                 #000000000000000&p_                                 _j0M^      
+                  ~00000000000000000gg_                           _jg000f       
+                    M0000000000000000000M1_,                  __jN0000M`        
+                     ]M000000000000000000000MMMM,,,,,,,,,,#MMM0000000T          
+                       "0000000000000000000000000000000000000000000M            
+                          M00000000000000000000000000000000000000M              
+                            MM0000000000000000000000000000000009                
+                               ~#00000000000000000000000000P~!                  
+                                  ~~M000000000000000000M~~                      
+                                         ~~~~~~~~~~'                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript" src="jshaker.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	   $('.block').click(function(){
+	       $(this).jshaker();
+	   });
+	});
+</script>
+<style type="text/css">
+    #content .block {
+        float: left;
+        border: 1px solid #CCCCCC;
+        background: #F0F0F0;
+        padding: 10px;
+        margin: 10px;
+        width: 300px;        
+    }
+</style>
+
+</head>
+<body>
+
+    <div id="page">
+        <h1>jShaker jQuery Plugin Demo</h1>
+        <p>Click any block to shake it ;)</p>
+        <div id="content">
+            <div class="block">
+				<p><strong>Duo ne laudem essent feugait, nonumy delenit legendos usu id.</strong> <span>Usu timeam invenire moderatius cu,</span> cum tale harum alterum ne, an pro senserit euripidis efficiendi. <span>Lorem ipsum vix ad albucius maluisset rationibus, mea eirmod</span> eleifend repudiare et.</p> 
+				<p>Ferri albucius appareat pro id, <span>qui aliquam feugait quaestio eu,</span> ne pri natum docendi voluptatum. <em>Cu tale atomorum laboramus usu, summo causae iriure cu pri.</em></p>
+				<p>Pro facer audiam vituperatoribus ei, mea liber pertinax mediocritatem eu, <span>qui ut vituperatoribus option malis.</span> <span>Nisl eligendi recusabo sed in, ut sint veri efficiendi mel.</span></p> 
+            </div>
+            <div class="block">
+                <p>Idque atqui convenire quo et, vel justo civibus explicari no. Idque atqui convenire quo et, vel justo civibus explicari no. Te clita doctus facilis ius, vix movet nonummy luptatum an.</p>
+                <p>Ferri albucius appareat pro id, qui aliquam feugait quaestio eu, ne pri natum docendi voluptatum. Cu tale atomorum laboramus usu, summo causae iriure cu pri.</p>
+            </div>
+            <div class="block">
+                <p>Ullum alienum accusata an nam, ea per stet altera scaevola, nostro appareat comprehensam eam ea. Mel quod ipsum appetere ea, ex vis quod amet idque.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>
+                        Item 3
+                        <ul>
+                            <li>Sub Item 1</li>
+                            <li>Sub Item 2</li>
+                            <li>Sub Item 3</li>
+                            <li>Sub Item 4</li>
+                            <li>Sub Item 5</li>
+                        </ul>
+                    </li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                </ul>
+            </div>
+            <div class="block">
+                <form action="#">
+                    <p>
+                        <label for="inp1">Text Field 1:</label>
+	                    <input type="text" name="inp1" id="inp1" value="" />                    
+                    </p>
+                    <p>
+                        <label for="inp2">Text Field 2:</label>
+	                    <input type="text" name="inp2" id="inp2" value="" />                    
+                    </p>
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <p class="script-link">
+            <a href="http://www.ajaxblender.com/jshaker.html" title="jShaker Home Page">Return Back to Script's Page</a>
+        </p>
+    </div>
+    
+</body>
+</html>
